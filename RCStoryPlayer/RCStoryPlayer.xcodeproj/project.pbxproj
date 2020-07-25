@@ -159,6 +159,7 @@
 				74FC8D4C24CC8E1200B86BCA /* Sources */,
 				74FC8D4D24CC8E1200B86BCA /* Frameworks */,
 				74FC8D4E24CC8E1200B86BCA /* Resources */,
+				08784AF905B49A852AB78DA7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -217,6 +218,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		08784AF905B49A852AB78DA7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RCStoryPlayer/Pods-RCStoryPlayer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RCStoryPlayer/Pods-RCStoryPlayer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RCStoryPlayer/Pods-RCStoryPlayer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C5577DCB42C77754324D1F60 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

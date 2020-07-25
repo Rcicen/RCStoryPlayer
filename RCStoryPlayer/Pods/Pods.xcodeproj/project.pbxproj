@@ -7,67 +7,112 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		55A74B11532DC629E8B260F8B18693B6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		5AD8B0E893422CA6C5940F5DCE3DE655 /* Pods-RCStoryPlayer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 59BA6111F445200ECFCF91CB99B08F53 /* Pods-RCStoryPlayer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6E36C237C9D4AEE23CE137FE1B5E9DE8 /* Pods-RCStoryPlayer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA808D7DAC74C9F7034B480ACD9ACE9 /* Pods-RCStoryPlayer-dummy.m */; };
+		3115123237761DC9A59F2A4BABD4E858 /* CubeAttributesAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057D074190D0DE179EFF9F546010042E /* CubeAttributesAnimator.swift */; };
+		34709768CC9DB6B015E44DC2E86F1C82 /* ParallaxAttributesAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E00E2C86BEC8577DD551DC54FF9C7EC /* ParallaxAttributesAnimator.swift */; };
+		3F5F2BD9F98E5FCB75AAADCC1CB508F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		485785145BB4DA4C8C2813867A9D35A4 /* LinearCardAttributesAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ABD589BFDA2D800EFAED418B0723B4 /* LinearCardAttributesAnimator.swift */; };
+		5AB05BF9E67946C7BBF8BA60614675BA /* LayoutAttributesAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9302F5BD8608ED732BE8E81C943FF6BE /* LayoutAttributesAnimator.swift */; };
+		606C9BB2FCA112ACED011DD5E24EF65D /* Pods-RCStoryPlayer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA4D6A776823CD7C496D4372E0AA667 /* Pods-RCStoryPlayer-dummy.m */; };
+		62E81C94B06643C0BA48F8C900E6369A /* PageAttributesAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC1839A9E739387B40F1AE47831A66 /* PageAttributesAnimator.swift */; };
+		866FF37AA2907C21BCDA858E3F0F8354 /* RotateInOutAttributesAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D629E42D12C114097BE64A7EE908BF /* RotateInOutAttributesAnimator.swift */; };
+		9095E27D20B580D02254F02F17E6E1BF /* AnimatedCollectionViewLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F7C0825106A1B34AB704533DF87A3721 /* AnimatedCollectionViewLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A379D7FA7306D07DA7A0FB0A9D7118D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		AD6A3EB9B901B588F90226CBB6F58C69 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7ECE5FAF56457D049F31E46A19A821 /* UIView+Anchor.swift */; };
+		B27DC85AD7F5CBAB0ACB7FD15359768D /* AnimatedCollectionViewLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CC02ECBC34DC195492FD68823FED8B13 /* AnimatedCollectionViewLayout-dummy.m */; };
+		B99B7CD2CAA473E7C22E6E429969D2BA /* ZoomInOutAttributesAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225748C45B15E6367AE75D8F5D25BEF2 /* ZoomInOutAttributesAnimator.swift */; };
+		C9CB2F94A0BC94C21E404CC4494D051B /* CrossFadeAttributesAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D14C1905238094EC6064BC7E72FB15 /* CrossFadeAttributesAnimator.swift */; };
+		CB0863EEFA753F1EB94DE359273659E9 /* AnimatedCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7AAAE7F1B9E76D04D19E2C70449337 /* AnimatedCollectionViewLayout.swift */; };
+		DAAB382F46E1A771D02F72407BC75456 /* SnapInAttributesAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FD8631D1ECD9AAAE32426E51F098C1 /* SnapInAttributesAnimator.swift */; };
+		E75E154B96BEF53675B973F271CE126C /* Pods-RCStoryPlayer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A172445501644D505B05603A41CEC720 /* Pods-RCStoryPlayer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2652099036B1F8D6F6930D036205005A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5771B182B07C28E13101CE371C584606;
+			remoteInfo = AnimatedCollectionViewLayout;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		005364E3DED5706ED13B9B170B175B72 /* Pods-RCStoryPlayer-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RCStoryPlayer-acknowledgements.plist"; sourceTree = "<group>"; };
+		057D074190D0DE179EFF9F546010042E /* CubeAttributesAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CubeAttributesAnimator.swift; path = Sources/AnimatedCollectionViewLayout/Animators/CubeAttributesAnimator.swift; sourceTree = "<group>"; };
+		0BF9631DFCB574B7D1CC8F975F81D65A /* Pods-RCStoryPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RCStoryPlayer.release.xcconfig"; sourceTree = "<group>"; };
+		0E00E2C86BEC8577DD551DC54FF9C7EC /* ParallaxAttributesAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParallaxAttributesAnimator.swift; path = Sources/AnimatedCollectionViewLayout/Animators/ParallaxAttributesAnimator.swift; sourceTree = "<group>"; };
+		225748C45B15E6367AE75D8F5D25BEF2 /* ZoomInOutAttributesAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZoomInOutAttributesAnimator.swift; path = Sources/AnimatedCollectionViewLayout/Animators/ZoomInOutAttributesAnimator.swift; sourceTree = "<group>"; };
+		252CF90F80A38105C344192BC7EC7365 /* AnimatedCollectionViewLayout-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AnimatedCollectionViewLayout-Info.plist"; sourceTree = "<group>"; };
+		29D629E42D12C114097BE64A7EE908BF /* RotateInOutAttributesAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RotateInOutAttributesAnimator.swift; path = Sources/AnimatedCollectionViewLayout/Animators/RotateInOutAttributesAnimator.swift; sourceTree = "<group>"; };
+		304C84416B26DAE406FEC9F4DAB69D52 /* AnimatedCollectionViewLayout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AnimatedCollectionViewLayout.release.xcconfig; sourceTree = "<group>"; };
+		30ABD589BFDA2D800EFAED418B0723B4 /* LinearCardAttributesAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LinearCardAttributesAnimator.swift; path = Sources/AnimatedCollectionViewLayout/Animators/LinearCardAttributesAnimator.swift; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		33A69C992D42200850FC5F072BD888F5 /* Pods-RCStoryPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RCStoryPlayer.release.xcconfig"; sourceTree = "<group>"; };
-		59BA6111F445200ECFCF91CB99B08F53 /* Pods-RCStoryPlayer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RCStoryPlayer-umbrella.h"; sourceTree = "<group>"; };
-		9C27AD1AC666E53A4ABC126111F9C032 /* Pods-RCStoryPlayer-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RCStoryPlayer-Info.plist"; sourceTree = "<group>"; };
+		3AEE1EB237D2997B48A4D8F65827CAC5 /* Pods-RCStoryPlayer-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RCStoryPlayer-frameworks.sh"; sourceTree = "<group>"; };
+		535DAE1DB50BF3A22CD71A44E1102589 /* Pods-RCStoryPlayer-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RCStoryPlayer-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5E7AAAE7F1B9E76D04D19E2C70449337 /* AnimatedCollectionViewLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedCollectionViewLayout.swift; path = Sources/AnimatedCollectionViewLayout/AnimatedCollectionViewLayout.swift; sourceTree = "<group>"; };
+		76FD8631D1ECD9AAAE32426E51F098C1 /* SnapInAttributesAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SnapInAttributesAnimator.swift; path = Sources/AnimatedCollectionViewLayout/Animators/SnapInAttributesAnimator.swift; sourceTree = "<group>"; };
+		78E918610B6451A31C06FFE8D222754F /* AnimatedCollectionViewLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AnimatedCollectionViewLayout.modulemap; sourceTree = "<group>"; };
+		9302F5BD8608ED732BE8E81C943FF6BE /* LayoutAttributesAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutAttributesAnimator.swift; path = Sources/AnimatedCollectionViewLayout/LayoutAttributesAnimator.swift; sourceTree = "<group>"; };
+		93E28616B907A3C605BC6A843C86219A /* Pods-RCStoryPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RCStoryPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		B0EA0DFDB35C19D65305CF64FEBBCCAF /* Pods-RCStoryPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RCStoryPlayer.debug.xcconfig"; sourceTree = "<group>"; };
-		BC91FFD6337B8F451316DCAB700BFBF9 /* Pods-RCStoryPlayer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RCStoryPlayer.modulemap"; sourceTree = "<group>"; };
+		9E7ECE5FAF56457D049F31E46A19A821 /* UIView+Anchor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Anchor.swift"; path = "Sources/AnimatedCollectionViewLayout/UIView+Anchor.swift"; sourceTree = "<group>"; };
+		9EC0DA3CF61F89B187B7B4A29B88DDAF /* AnimatedCollectionViewLayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AnimatedCollectionViewLayout.debug.xcconfig; sourceTree = "<group>"; };
+		A172445501644D505B05603A41CEC720 /* Pods-RCStoryPlayer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RCStoryPlayer-umbrella.h"; sourceTree = "<group>"; };
+		C5C5054071C05153C30E039485886DB1 /* Pods-RCStoryPlayer-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RCStoryPlayer-Info.plist"; sourceTree = "<group>"; };
+		CC02ECBC34DC195492FD68823FED8B13 /* AnimatedCollectionViewLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AnimatedCollectionViewLayout-dummy.m"; sourceTree = "<group>"; };
+		CDEC1839A9E739387B40F1AE47831A66 /* PageAttributesAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageAttributesAnimator.swift; path = Sources/AnimatedCollectionViewLayout/Animators/PageAttributesAnimator.swift; sourceTree = "<group>"; };
 		CFBF2D293EDF8F706FA5C842227A46EC /* Pods_RCStoryPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_RCStoryPlayer.framework; path = "Pods-RCStoryPlayer.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D0283CA66261A918855E8F4DF4777310 /* Pods-RCStoryPlayer-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RCStoryPlayer-acknowledgements.markdown"; sourceTree = "<group>"; };
-		EAA808D7DAC74C9F7034B480ACD9ACE9 /* Pods-RCStoryPlayer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RCStoryPlayer-dummy.m"; sourceTree = "<group>"; };
+		D3E750671680FA7FAA85AEDC8BB973C8 /* AnimatedCollectionViewLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AnimatedCollectionViewLayout-prefix.pch"; sourceTree = "<group>"; };
+		D44CC39AEF2D3FFD30243285B9146BBD /* AnimatedCollectionViewLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AnimatedCollectionViewLayout.framework; path = AnimatedCollectionViewLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDA4D6A776823CD7C496D4372E0AA667 /* Pods-RCStoryPlayer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RCStoryPlayer-dummy.m"; sourceTree = "<group>"; };
+		E2D14C1905238094EC6064BC7E72FB15 /* CrossFadeAttributesAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CrossFadeAttributesAnimator.swift; path = Sources/AnimatedCollectionViewLayout/Animators/CrossFadeAttributesAnimator.swift; sourceTree = "<group>"; };
+		E306CACDDAEDFDE70FE2844B88D737FB /* Pods-RCStoryPlayer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RCStoryPlayer.modulemap"; sourceTree = "<group>"; };
+		F7C0825106A1B34AB704533DF87A3721 /* AnimatedCollectionViewLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AnimatedCollectionViewLayout-umbrella.h"; sourceTree = "<group>"; };
+		FA8206BE8876B4C693B2282BE3B9EFF6 /* Pods-RCStoryPlayer-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RCStoryPlayer-acknowledgements.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7785D7DF166D9AA38FD53E2C60F84B1C /* Frameworks */ = {
+		863E024117F0EE95E9EE1B5EBB4A301A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55A74B11532DC629E8B260F8B18693B6 /* Foundation.framework in Frameworks */,
+				A379D7FA7306D07DA7A0FB0A9D7118D3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B70FDA135C32151BB6D142C6AD8ADFA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F5F2BD9F98E5FCB75AAADCC1CB508F6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		27F13501BBF21E69207EF52A478E1794 /* Pods-RCStoryPlayer */ = {
+		5DAF4B76CF0CA194103ABD7BAA58134C /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				BC91FFD6337B8F451316DCAB700BFBF9 /* Pods-RCStoryPlayer.modulemap */,
-				D0283CA66261A918855E8F4DF4777310 /* Pods-RCStoryPlayer-acknowledgements.markdown */,
-				005364E3DED5706ED13B9B170B175B72 /* Pods-RCStoryPlayer-acknowledgements.plist */,
-				EAA808D7DAC74C9F7034B480ACD9ACE9 /* Pods-RCStoryPlayer-dummy.m */,
-				9C27AD1AC666E53A4ABC126111F9C032 /* Pods-RCStoryPlayer-Info.plist */,
-				59BA6111F445200ECFCF91CB99B08F53 /* Pods-RCStoryPlayer-umbrella.h */,
-				B0EA0DFDB35C19D65305CF64FEBBCCAF /* Pods-RCStoryPlayer.debug.xcconfig */,
-				33A69C992D42200850FC5F072BD888F5 /* Pods-RCStoryPlayer.release.xcconfig */,
-			);
-			name = "Pods-RCStoryPlayer";
-			path = "Target Support Files/Pods-RCStoryPlayer";
-			sourceTree = "<group>";
-		};
-		8D7F61DA273B903E51903E63BB380B86 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				27F13501BBF21E69207EF52A478E1794 /* Pods-RCStoryPlayer */,
+				6D1CC9E2660AD881E4C55BA9FF0A9198 /* Pods-RCStoryPlayer */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		ABA5767C589181238F0DA5085273E262 /* Products */ = {
+		6D1CC9E2660AD881E4C55BA9FF0A9198 /* Pods-RCStoryPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				CFBF2D293EDF8F706FA5C842227A46EC /* Pods_RCStoryPlayer.framework */,
+				E306CACDDAEDFDE70FE2844B88D737FB /* Pods-RCStoryPlayer.modulemap */,
+				535DAE1DB50BF3A22CD71A44E1102589 /* Pods-RCStoryPlayer-acknowledgements.markdown */,
+				FA8206BE8876B4C693B2282BE3B9EFF6 /* Pods-RCStoryPlayer-acknowledgements.plist */,
+				DDA4D6A776823CD7C496D4372E0AA667 /* Pods-RCStoryPlayer-dummy.m */,
+				3AEE1EB237D2997B48A4D8F65827CAC5 /* Pods-RCStoryPlayer-frameworks.sh */,
+				C5C5054071C05153C30E039485886DB1 /* Pods-RCStoryPlayer-Info.plist */,
+				A172445501644D505B05603A41CEC720 /* Pods-RCStoryPlayer-umbrella.h */,
+				93E28616B907A3C605BC6A843C86219A /* Pods-RCStoryPlayer.debug.xcconfig */,
+				0BF9631DFCB574B7D1CC8F975F81D65A /* Pods-RCStoryPlayer.release.xcconfig */,
 			);
-			name = Products;
+			name = "Pods-RCStoryPlayer";
+			path = "Target Support Files/Pods-RCStoryPlayer";
 			sourceTree = "<group>";
 		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
@@ -78,14 +123,58 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		C28ED091708F81B36C51E84E531719C5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				78E918610B6451A31C06FFE8D222754F /* AnimatedCollectionViewLayout.modulemap */,
+				CC02ECBC34DC195492FD68823FED8B13 /* AnimatedCollectionViewLayout-dummy.m */,
+				252CF90F80A38105C344192BC7EC7365 /* AnimatedCollectionViewLayout-Info.plist */,
+				D3E750671680FA7FAA85AEDC8BB973C8 /* AnimatedCollectionViewLayout-prefix.pch */,
+				F7C0825106A1B34AB704533DF87A3721 /* AnimatedCollectionViewLayout-umbrella.h */,
+				9EC0DA3CF61F89B187B7B4A29B88DDAF /* AnimatedCollectionViewLayout.debug.xcconfig */,
+				304C84416B26DAE406FEC9F4DAB69D52 /* AnimatedCollectionViewLayout.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AnimatedCollectionViewLayout";
+			sourceTree = "<group>";
+		};
+		C6B69CA577B0395B9B073C0443892D95 /* AnimatedCollectionViewLayout */ = {
+			isa = PBXGroup;
+			children = (
+				5E7AAAE7F1B9E76D04D19E2C70449337 /* AnimatedCollectionViewLayout.swift */,
+				E2D14C1905238094EC6064BC7E72FB15 /* CrossFadeAttributesAnimator.swift */,
+				057D074190D0DE179EFF9F546010042E /* CubeAttributesAnimator.swift */,
+				9302F5BD8608ED732BE8E81C943FF6BE /* LayoutAttributesAnimator.swift */,
+				30ABD589BFDA2D800EFAED418B0723B4 /* LinearCardAttributesAnimator.swift */,
+				CDEC1839A9E739387B40F1AE47831A66 /* PageAttributesAnimator.swift */,
+				0E00E2C86BEC8577DD551DC54FF9C7EC /* ParallaxAttributesAnimator.swift */,
+				29D629E42D12C114097BE64A7EE908BF /* RotateInOutAttributesAnimator.swift */,
+				76FD8631D1ECD9AAAE32426E51F098C1 /* SnapInAttributesAnimator.swift */,
+				9E7ECE5FAF56457D049F31E46A19A821 /* UIView+Anchor.swift */,
+				225748C45B15E6367AE75D8F5D25BEF2 /* ZoomInOutAttributesAnimator.swift */,
+				C28ED091708F81B36C51E84E531719C5 /* Support Files */,
+			);
+			name = AnimatedCollectionViewLayout;
+			path = AnimatedCollectionViewLayout;
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				ABA5767C589181238F0DA5085273E262 /* Products */,
-				8D7F61DA273B903E51903E63BB380B86 /* Targets Support Files */,
+				CF61D73CDBC4D696D9378D71A1949637 /* Pods */,
+				D8FE6ABCDEF16E2A7709AB0B28C54C77 /* Products */,
+				5DAF4B76CF0CA194103ABD7BAA58134C /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		CF61D73CDBC4D696D9378D71A1949637 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C6B69CA577B0395B9B073C0443892D95 /* AnimatedCollectionViewLayout */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
@@ -96,14 +185,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D8FE6ABCDEF16E2A7709AB0B28C54C77 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D44CC39AEF2D3FFD30243285B9146BBD /* AnimatedCollectionViewLayout.framework */,
+				CFBF2D293EDF8F706FA5C842227A46EC /* Pods_RCStoryPlayer.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		46A12B79A04ACC228779076ABB508D55 /* Headers */ = {
+		7024C1BA8DBE2CC91ECF45E7215BBA4C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AD8B0E893422CA6C5940F5DCE3DE655 /* Pods-RCStoryPlayer-umbrella.h in Headers */,
+				9095E27D20B580D02254F02F17E6E1BF /* AnimatedCollectionViewLayout-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC54326D1F85611AEEC59C3ECA637243 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E75E154B96BEF53675B973F271CE126C /* Pods-RCStoryPlayer-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,20 +218,39 @@
 /* Begin PBXNativeTarget section */
 		25145C881CB3C9AF1852C08650CA4639 /* Pods-RCStoryPlayer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B650B5379FA029604F62A16FBAD3EB07 /* Build configuration list for PBXNativeTarget "Pods-RCStoryPlayer" */;
+			buildConfigurationList = 89342AEE651B12069C9B3DE622AC8238 /* Build configuration list for PBXNativeTarget "Pods-RCStoryPlayer" */;
 			buildPhases = (
-				46A12B79A04ACC228779076ABB508D55 /* Headers */,
-				16B983E6F991495FC562408DC1ACE457 /* Sources */,
-				7785D7DF166D9AA38FD53E2C60F84B1C /* Frameworks */,
-				D92B05ECDBD41A21E4B44D750CC6BDE4 /* Resources */,
+				EC54326D1F85611AEEC59C3ECA637243 /* Headers */,
+				CD7386290F79D4E5040E859C5104DFAD /* Sources */,
+				B70FDA135C32151BB6D142C6AD8ADFA6 /* Frameworks */,
+				BC7FD3893F65705FC84757A6F4240551 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D49313886AC29EC2AF59596B4BC52881 /* PBXTargetDependency */,
+			);
+			name = "Pods-RCStoryPlayer";
+			productName = "Pods-RCStoryPlayer";
+			productReference = CFBF2D293EDF8F706FA5C842227A46EC /* Pods_RCStoryPlayer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5771B182B07C28E13101CE371C584606 /* AnimatedCollectionViewLayout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB40AE1FF75BF3DC7159E8D0DC43CB40 /* Build configuration list for PBXNativeTarget "AnimatedCollectionViewLayout" */;
+			buildPhases = (
+				7024C1BA8DBE2CC91ECF45E7215BBA4C /* Headers */,
+				E2D0D0061CD48EA2DAA6895283342B1C /* Sources */,
+				863E024117F0EE95E9EE1B5EBB4A301A /* Frameworks */,
+				AB592CCCF3379DA003129DC48B2C2EF4 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-RCStoryPlayer";
-			productName = "Pods-RCStoryPlayer";
-			productReference = CFBF2D293EDF8F706FA5C842227A46EC /* Pods_RCStoryPlayer.framework */;
+			name = AnimatedCollectionViewLayout;
+			productName = AnimatedCollectionViewLayout;
+			productReference = D44CC39AEF2D3FFD30243285B9146BBD /* AnimatedCollectionViewLayout.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -146,17 +271,25 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = ABA5767C589181238F0DA5085273E262 /* Products */;
+			productRefGroup = D8FE6ABCDEF16E2A7709AB0B28C54C77 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				5771B182B07C28E13101CE371C584606 /* AnimatedCollectionViewLayout */,
 				25145C881CB3C9AF1852C08650CA4639 /* Pods-RCStoryPlayer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D92B05ECDBD41A21E4B44D750CC6BDE4 /* Resources */ = {
+		AB592CCCF3379DA003129DC48B2C2EF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC7FD3893F65705FC84757A6F4240551 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -166,15 +299,43 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		16B983E6F991495FC562408DC1ACE457 /* Sources */ = {
+		CD7386290F79D4E5040E859C5104DFAD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E36C237C9D4AEE23CE137FE1B5E9DE8 /* Pods-RCStoryPlayer-dummy.m in Sources */,
+				606C9BB2FCA112ACED011DD5E24EF65D /* Pods-RCStoryPlayer-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2D0D0061CD48EA2DAA6895283342B1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B27DC85AD7F5CBAB0ACB7FD15359768D /* AnimatedCollectionViewLayout-dummy.m in Sources */,
+				CB0863EEFA753F1EB94DE359273659E9 /* AnimatedCollectionViewLayout.swift in Sources */,
+				C9CB2F94A0BC94C21E404CC4494D051B /* CrossFadeAttributesAnimator.swift in Sources */,
+				3115123237761DC9A59F2A4BABD4E858 /* CubeAttributesAnimator.swift in Sources */,
+				5AB05BF9E67946C7BBF8BA60614675BA /* LayoutAttributesAnimator.swift in Sources */,
+				485785145BB4DA4C8C2813867A9D35A4 /* LinearCardAttributesAnimator.swift in Sources */,
+				62E81C94B06643C0BA48F8C900E6369A /* PageAttributesAnimator.swift in Sources */,
+				34709768CC9DB6B015E44DC2E86F1C82 /* ParallaxAttributesAnimator.swift in Sources */,
+				866FF37AA2907C21BCDA858E3F0F8354 /* RotateInOutAttributesAnimator.swift in Sources */,
+				DAAB382F46E1A771D02F72407BC75456 /* SnapInAttributesAnimator.swift in Sources */,
+				AD6A3EB9B901B588F90226CBB6F58C69 /* UIView+Anchor.swift in Sources */,
+				B99B7CD2CAA473E7C22E6E429969D2BA /* ZoomInOutAttributesAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D49313886AC29EC2AF59596B4BC52881 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AnimatedCollectionViewLayout;
+			target = 5771B182B07C28E13101CE371C584606 /* AnimatedCollectionViewLayout */;
+			targetProxy = 2652099036B1F8D6F6930D036205005A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1422B121EAEAEA11307496903FA623C6 /* Release */ = {
@@ -237,9 +398,45 @@
 			};
 			name = Release;
 		};
-		1B106B7C41C56372E8DFF5BDF707259A /* Release */ = {
+		3346835AF6C5EEBE8B276F83390E4B98 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 33A69C992D42200850FC5F072BD888F5 /* Pods-RCStoryPlayer.release.xcconfig */;
+			baseConfigurationReference = 304C84416B26DAE406FEC9F4DAB69D52 /* AnimatedCollectionViewLayout.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AnimatedCollectionViewLayout/AnimatedCollectionViewLayout-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AnimatedCollectionViewLayout/AnimatedCollectionViewLayout-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/AnimatedCollectionViewLayout/AnimatedCollectionViewLayout.modulemap";
+				PRODUCT_MODULE_NAME = AnimatedCollectionViewLayout;
+				PRODUCT_NAME = AnimatedCollectionViewLayout;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		450C7C2AC06D53951970C6401723A244 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BF9631DFCB574B7D1CC8F975F81D65A /* Pods-RCStoryPlayer.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -276,9 +473,44 @@
 			};
 			name = Release;
 		};
-		5A46F1F4A167C27B13E694891623D643 /* Debug */ = {
+		C0D483F81BF565DFD343851A350B663C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B0EA0DFDB35C19D65305CF64FEBBCCAF /* Pods-RCStoryPlayer.debug.xcconfig */;
+			baseConfigurationReference = 9EC0DA3CF61F89B187B7B4A29B88DDAF /* AnimatedCollectionViewLayout.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AnimatedCollectionViewLayout/AnimatedCollectionViewLayout-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AnimatedCollectionViewLayout/AnimatedCollectionViewLayout-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/AnimatedCollectionViewLayout/AnimatedCollectionViewLayout.modulemap";
+				PRODUCT_MODULE_NAME = AnimatedCollectionViewLayout;
+				PRODUCT_NAME = AnimatedCollectionViewLayout;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		ECD85B5AAB0C79EAF08B41E90AF27B38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93E28616B907A3C605BC6A843C86219A /* Pods-RCStoryPlayer.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -390,11 +622,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B650B5379FA029604F62A16FBAD3EB07 /* Build configuration list for PBXNativeTarget "Pods-RCStoryPlayer" */ = {
+		89342AEE651B12069C9B3DE622AC8238 /* Build configuration list for PBXNativeTarget "Pods-RCStoryPlayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5A46F1F4A167C27B13E694891623D643 /* Debug */,
-				1B106B7C41C56372E8DFF5BDF707259A /* Release */,
+				ECD85B5AAB0C79EAF08B41E90AF27B38 /* Debug */,
+				450C7C2AC06D53951970C6401723A244 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB40AE1FF75BF3DC7159E8D0DC43CB40 /* Build configuration list for PBXNativeTarget "AnimatedCollectionViewLayout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0D483F81BF565DFD343851A350B663C /* Debug */,
+				3346835AF6C5EEBE8B276F83390E4B98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

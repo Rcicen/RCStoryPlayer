@@ -7,21 +7,27 @@
 //
 
 import UIKit
+import AnimatedCollectionViewLayout
 
 class StoryPreviewController: UIViewController,ReusableView {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        collectionView.register(StoryPreviewCell.nib, forCellWithReuseIdentifier: StoryPreviewCell.reuseIdentifier)
-        let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+    lazy var previewFlowLayout:AnimatedCollectionViewLayout = {
+        let flowLayout = AnimatedCollectionViewLayout()
+        flowLayout.animator = CubeAttributesAnimator(perspective: -1/100, totalAngle: .pi/15)
         flowLayout.sectionInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
         flowLayout.scrollDirection = .horizontal
         flowLayout.minimumLineSpacing = 0.0
         flowLayout.minimumInteritemSpacing = 0.0
-        collectionView.collectionViewLayout = flowLayout
+        return flowLayout
+    }()
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        collectionView.register(StoryPreviewCell.nib, forCellWithReuseIdentifier: StoryPreviewCell.reuseIdentifier)
+        collectionView.collectionViewLayout = previewFlowLayout
     }
 
 }
