@@ -8,12 +8,15 @@
 
 import UIKit
 
-class StoryPreviewCell: UICollectionViewCell {
+class StoryPreviewCell: UICollectionViewCell,ReusableView {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var containerView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.backgroundColor = .red
+        containerView.backgroundColor = .darkGray
     }
 
 }

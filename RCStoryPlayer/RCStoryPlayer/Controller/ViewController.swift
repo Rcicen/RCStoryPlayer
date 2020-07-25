@@ -36,6 +36,9 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // TODO: Present Preview Controller
+        let previewController = self.storyboard?.instantiateViewController(withIdentifier: StoryPreviewController.reuseIdentifier) as! StoryPreviewController
+        previewController.modalPresentationStyle = .overFullScreen
+        self.present(previewController, animated: true, completion: nil)
     }
 }
 

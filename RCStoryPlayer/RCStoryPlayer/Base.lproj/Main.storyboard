@@ -85,6 +85,47 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
         </scene>
+        <!--Story Preview Controller-->
+        <scene sceneID="Deb-ox-kdZ">
+            <objects>
+                <viewController storyboardIdentifier="StoryPreviewController" id="yth-2X-COG" customClass="StoryPreviewController" customModule="RCStoryPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ny8-PC-CXE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="17c-pk-kKm">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DmV-Ys-qED">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="yth-2X-COG" id="HWA-xx-6LM"/>
+                                    <outlet property="delegate" destination="yth-2X-COG" id="URr-pI-noa"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="17c-pk-kKm" firstAttribute="top" secondItem="ZPe-bX-uzI" secondAttribute="top" id="Vsx-kj-mYe"/>
+                            <constraint firstItem="ZPe-bX-uzI" firstAttribute="trailing" secondItem="17c-pk-kKm" secondAttribute="trailing" id="eBJ-Mb-KvO"/>
+                            <constraint firstItem="17c-pk-kKm" firstAttribute="leading" secondItem="ZPe-bX-uzI" secondAttribute="leading" id="eLV-Q2-CuD"/>
+                            <constraint firstItem="ZPe-bX-uzI" firstAttribute="bottom" secondItem="17c-pk-kKm" secondAttribute="bottom" id="jz9-Wh-0T9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZPe-bX-uzI"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="17c-pk-kKm" id="8Bs-dd-Fs8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ClR-fB-0v6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="888" y="138"/>
+        </scene>
     </scenes>
     <resources>
         <image name="profile_placeholder" width="125" height="125"/>
