@@ -21,9 +21,12 @@
 		74FC8D7924CC90D600B86BCA /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FC8D6F24CC8F6000B86BCA /* VideoPlayerView.swift */; };
 		74FC8D7A24CC90D600B86BCA /* PreviewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FC8D7024CC8F6000B86BCA /* PreviewHeaderView.swift */; };
 		74FC8D7C24CC941700B86BCA /* StoryPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FC8D7B24CC941700B86BCA /* StoryPreviewController.swift */; };
+		B7E6F4C4DE58086EC55DEDB1 /* Pods_RCStoryPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7132E50BC892E5E765CE92C4 /* Pods_RCStoryPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F84394BADE905F00A0496B9 /* Pods-RCStoryPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCStoryPlayer.debug.xcconfig"; path = "Target Support Files/Pods-RCStoryPlayer/Pods-RCStoryPlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		7132E50BC892E5E765CE92C4 /* Pods_RCStoryPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RCStoryPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74FC8D5024CC8E1200B86BCA /* RCStoryPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RCStoryPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74FC8D5324CC8E1200B86BCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74FC8D5524CC8E1200B86BCA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +43,7 @@
 		74FC8D7124CC8F6000B86BCA /* StoryPreviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryPreviewCell.xib; sourceTree = "<group>"; };
 		74FC8D7324CC907B00B86BCA /* StoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
 		74FC8D7B24CC941700B86BCA /* StoryPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPreviewController.swift; sourceTree = "<group>"; };
+		BF8CD7067C7E3A44DC2C5A9E /* Pods-RCStoryPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCStoryPlayer.release.xcconfig"; path = "Target Support Files/Pods-RCStoryPlayer/Pods-RCStoryPlayer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,17 +51,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7E6F4C4DE58086EC55DEDB1 /* Pods_RCStoryPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5DB9A643C88C42D70A423214 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7132E50BC892E5E765CE92C4 /* Pods_RCStoryPlayer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		74FC8D4724CC8E1200B86BCA = {
 			isa = PBXGroup;
 			children = (
 				74FC8D5224CC8E1200B86BCA /* RCStoryPlayer */,
 				74FC8D5124CC8E1200B86BCA /* Products */,
+				7B0859DED3262835276E89A2 /* Pods */,
+				5DB9A643C88C42D70A423214 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +138,16 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		7B0859DED3262835276E89A2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3F84394BADE905F00A0496B9 /* Pods-RCStoryPlayer.debug.xcconfig */,
+				BF8CD7067C7E3A44DC2C5A9E /* Pods-RCStoryPlayer.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -130,6 +155,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 74FC8D6424CC8E1400B86BCA /* Build configuration list for PBXNativeTarget "RCStoryPlayer" */;
 			buildPhases = (
+				C5577DCB42C77754324D1F60 /* [CP] Check Pods Manifest.lock */,
 				74FC8D4C24CC8E1200B86BCA /* Sources */,
 				74FC8D4D24CC8E1200B86BCA /* Frameworks */,
 				74FC8D4E24CC8E1200B86BCA /* Resources */,
@@ -189,6 +215,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C5577DCB42C77754324D1F60 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RCStoryPlayer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		74FC8D4C24CC8E1200B86BCA /* Sources */ = {
@@ -346,6 +397,7 @@
 		};
 		74FC8D6524CC8E1400B86BCA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F84394BADE905F00A0496B9 /* Pods-RCStoryPlayer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -365,6 +417,7 @@
 		};
 		74FC8D6624CC8E1400B86BCA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF8CD7067C7E3A44DC2C5A9E /* Pods-RCStoryPlayer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
