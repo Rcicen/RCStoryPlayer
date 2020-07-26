@@ -12,6 +12,7 @@
 		74570BB724CD88E400D95A52 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74570BB624CD88E300D95A52 /* User.swift */; };
 		74570BB924CD88EF00D95A52 /* StoryGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74570BB824CD88EF00D95A52 /* StoryGroups.swift */; };
 		74570BBB24CD8A0D00D95A52 /* MediaContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74570BBA24CD8A0D00D95A52 /* MediaContentType.swift */; };
+		74570BBD24CD905D00D95A52 /* IGSnapProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74570BBC24CD905D00D95A52 /* IGSnapProgressView.swift */; };
 		74FC8D5424CC8E1200B86BCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FC8D5324CC8E1200B86BCA /* AppDelegate.swift */; };
 		74FC8D5624CC8E1200B86BCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FC8D5524CC8E1200B86BCA /* SceneDelegate.swift */; };
 		74FC8D5824CC8E1200B86BCA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FC8D5724CC8E1200B86BCA /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 		74570BB624CD88E300D95A52 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		74570BB824CD88EF00D95A52 /* StoryGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryGroups.swift; sourceTree = "<group>"; };
 		74570BBA24CD8A0D00D95A52 /* MediaContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContentType.swift; sourceTree = "<group>"; };
+		74570BBC24CD905D00D95A52 /* IGSnapProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGSnapProgressView.swift; sourceTree = "<group>"; };
 		74FC8D5024CC8E1200B86BCA /* RCStoryPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RCStoryPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74FC8D5324CC8E1200B86BCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74FC8D5524CC8E1200B86BCA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		74570BBE24CD906200D95A52 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				74570BBC24CD905D00D95A52 /* IGSnapProgressView.swift */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
 		74FC8D4724CC8E1200B86BCA = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +121,7 @@
 			children = (
 				74FC8D5324CC8E1200B86BCA /* AppDelegate.swift */,
 				74FC8D5524CC8E1200B86BCA /* SceneDelegate.swift */,
+				74570BBE24CD906200D95A52 /* External */,
 				74FC8D6724CC8F3500B86BCA /* Extension */,
 				74FC8D6B24CC8F6000B86BCA /* View */,
 				74570BB124CD877400D95A52 /* Model */,
@@ -291,6 +302,7 @@
 				74FC8D5824CC8E1200B86BCA /* ViewController.swift in Sources */,
 				74FC8D7C24CC941700B86BCA /* StoryPreviewController.swift in Sources */,
 				74570BBB24CD8A0D00D95A52 /* MediaContentType.swift in Sources */,
+				74570BBD24CD905D00D95A52 /* IGSnapProgressView.swift in Sources */,
 				74FC8D7524CC90CC00B86BCA /* ReusableView.swift in Sources */,
 				74FC8D5424CC8E1200B86BCA /* AppDelegate.swift in Sources */,
 				74FC8D5624CC8E1200B86BCA /* SceneDelegate.swift in Sources */,
