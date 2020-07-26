@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74570BB324CD880B00D95A52 /* StoryGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74570BB224CD880B00D95A52 /* StoryGroup.swift */; };
+		74570BB524CD88DC00D95A52 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74570BB424CD88DC00D95A52 /* Story.swift */; };
+		74570BB724CD88E400D95A52 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74570BB624CD88E300D95A52 /* User.swift */; };
+		74570BB924CD88EF00D95A52 /* StoryGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74570BB824CD88EF00D95A52 /* StoryGroups.swift */; };
 		74FC8D5424CC8E1200B86BCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FC8D5324CC8E1200B86BCA /* AppDelegate.swift */; };
 		74FC8D5624CC8E1200B86BCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FC8D5524CC8E1200B86BCA /* SceneDelegate.swift */; };
 		74FC8D5824CC8E1200B86BCA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FC8D5724CC8E1200B86BCA /* ViewController.swift */; };
@@ -27,6 +31,10 @@
 /* Begin PBXFileReference section */
 		3F84394BADE905F00A0496B9 /* Pods-RCStoryPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCStoryPlayer.debug.xcconfig"; path = "Target Support Files/Pods-RCStoryPlayer/Pods-RCStoryPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		7132E50BC892E5E765CE92C4 /* Pods_RCStoryPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RCStoryPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74570BB224CD880B00D95A52 /* StoryGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryGroup.swift; sourceTree = "<group>"; };
+		74570BB424CD88DC00D95A52 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		74570BB624CD88E300D95A52 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		74570BB824CD88EF00D95A52 /* StoryGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryGroups.swift; sourceTree = "<group>"; };
 		74FC8D5024CC8E1200B86BCA /* RCStoryPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RCStoryPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74FC8D5324CC8E1200B86BCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74FC8D5524CC8E1200B86BCA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +74,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		74570BB124CD877400D95A52 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				74570BB824CD88EF00D95A52 /* StoryGroups.swift */,
+				74570BB224CD880B00D95A52 /* StoryGroup.swift */,
+				74570BB424CD88DC00D95A52 /* Story.swift */,
+				74570BB624CD88E300D95A52 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		74FC8D4724CC8E1200B86BCA = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +110,7 @@
 				74FC8D5524CC8E1200B86BCA /* SceneDelegate.swift */,
 				74FC8D6724CC8F3500B86BCA /* Extension */,
 				74FC8D6B24CC8F6000B86BCA /* View */,
+				74570BB124CD877400D95A52 /* Model */,
 				74FC8D7224CC8FE200B86BCA /* Controller */,
 				74FC8D5924CC8E1200B86BCA /* Main.storyboard */,
 				74FC8D5C24CC8E1400B86BCA /* Assets.xcassets */,
@@ -144,7 +164,6 @@
 				3F84394BADE905F00A0496B9 /* Pods-RCStoryPlayer.debug.xcconfig */,
 				BF8CD7067C7E3A44DC2C5A9E /* Pods-RCStoryPlayer.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -264,16 +283,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74570BB724CD88E400D95A52 /* User.swift in Sources */,
 				74FC8D7724CC90D600B86BCA /* StoryPreviewCell.swift in Sources */,
 				74FC8D5824CC8E1200B86BCA /* ViewController.swift in Sources */,
 				74FC8D7C24CC941700B86BCA /* StoryPreviewController.swift in Sources */,
 				74FC8D7524CC90CC00B86BCA /* ReusableView.swift in Sources */,
 				74FC8D5424CC8E1200B86BCA /* AppDelegate.swift in Sources */,
 				74FC8D5624CC8E1200B86BCA /* SceneDelegate.swift in Sources */,
+				74570BB924CD88EF00D95A52 /* StoryGroups.swift in Sources */,
 				74FC8D7624CC90D000B86BCA /* NIB+Initilizer.swift in Sources */,
 				74FC8D7424CC907B00B86BCA /* StoryCell.swift in Sources */,
 				74FC8D7924CC90D600B86BCA /* VideoPlayerView.swift in Sources */,
 				74FC8D7A24CC90D600B86BCA /* PreviewHeaderView.swift in Sources */,
+				74570BB324CD880B00D95A52 /* StoryGroup.swift in Sources */,
+				74570BB524CD88DC00D95A52 /* Story.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
