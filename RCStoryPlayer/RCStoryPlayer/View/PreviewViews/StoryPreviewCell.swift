@@ -28,7 +28,7 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
     
     private lazy var longPressGesture: UILongPressGestureRecognizer = {
         let recognizer = UILongPressGestureRecognizer(target: self, action: #selector(didLongPress(_:)))
-        recognizer.minimumPressDuration = 0.2
+        recognizer.minimumPressDuration = 0.3
         recognizer.delegate = self
         return recognizer
     }()
@@ -37,10 +37,25 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
     //MARK: UIGestureRecognizer Actions
     @objc func didTapScreen(_ sender: UITapGestureRecognizer) {
         //TODO: Configure
+        let touchLocation = sender.location(ofTouch: 0, in: scrollView)
+        
+        if touchLocation.x < scrollView.contentOffset.x + (scrollView.frame.width/2) {
+            //TODO: Go to previous story or previous userStory (Goes to last displayed story index of that user)
+        } else {
+            //TODO: Go to next story or next userStory (Goes to last displayed story index of that user)
+        }
+        
     }
     
     @objc func didLongPress(_ sender: UILongPressGestureRecognizer) {
         //TODO: Configure
+        if sender.state == .began ||  sender.state == .ended {
+            if(sender.state == .began) {
+                //TODO: Pause story
+            } else {
+                //TODO: Resume story
+            }
+        }
     }
 }
 
