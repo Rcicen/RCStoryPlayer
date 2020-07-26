@@ -14,7 +14,8 @@ class StoryGroup:Codable {
     let stories:[Story]
     let uuid:Int
     let storyCount:Int
-    var lastPlayedStoryIndex = 0
+    var lastPlayedStoryIndex:Int = 0
+    var isCancelledAbruptly:Bool = false
     
     enum CodingKeys: String, CodingKey {
         case user = "user"
