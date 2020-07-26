@@ -8,6 +8,24 @@
 
 import Foundation
 
-class StoryGroup {
+class StoryGroup:Codable {
     
+    let user:User
+    let stories:[Story]
+    let uuid:Int
+    let storyCount:Int
+    var lastPlayedStoryIndex = 0
+    
+    enum CodingKeys: String, CodingKey {
+        case user = "user"
+        case stories = "stories"
+        case uuid = "id"
+        case storyCount = "story_count"
+    }
+}
+
+extension StoryGroup: Equatable {
+    public static func == (lhs: StoryGroup, rhs: StoryGroup) -> Bool {
+        return lhs.uuid == rhs.uuid
+    }
 }

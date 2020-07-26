@@ -8,6 +8,13 @@
 
 import Foundation
 
-class StoryGroups {
+class StoryGroups:Codable {
+    let storyGroups:[StoryGroup]
+    let count:Int
     
+    enum CodingKeys: String, CodingKey {
+        case storyGroups = "story_groups"
+        case count = "count"
+    }
 }
+
