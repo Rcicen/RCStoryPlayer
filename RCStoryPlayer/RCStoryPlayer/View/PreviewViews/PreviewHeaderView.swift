@@ -104,7 +104,7 @@ class PreviewHeaderView:UIView {
     }
     
     @objc func didTapClose() {
-        //TODO: Handle closeButton button tap action
+        NotificationCenter.default.post(name: .dismissPreviewController, object: nil)
     }
 }
 

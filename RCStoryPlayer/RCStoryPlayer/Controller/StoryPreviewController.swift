@@ -32,8 +32,13 @@ class StoryPreviewController: UIViewController,ReusableView {
         super.viewDidLoad()
         collectionView.register(StoryPreviewCell.nib, forCellWithReuseIdentifier: StoryPreviewCell.reuseIdentifier)
         collectionView.collectionViewLayout = previewFlowLayout
+        NotificationCenter.default.addObserver(self, selector: #selector(dismissPreviewController), name: .dismissPreviewController, object: nil)
     }
-
+    
+    @objc func dismissPreviewController() {
+        NotificationCenter.default.removeObserver(self)
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 extension StoryPreviewController: UICollectionViewDelegate, UICollectionViewDataSource {

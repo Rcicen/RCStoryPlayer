@@ -16,6 +16,7 @@
 		745B6A0924CF702800AD0A30 /* MockData.json in Resources */ = {isa = PBXBuildFile; fileRef = 745B6A0824CF702500AD0A30 /* MockData.json */; };
 		745B6A0C24CF73D300AD0A30 /* MockDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745B6A0B24CF73D300AD0A30 /* MockDataProvider.swift */; };
 		745B6A0E24CF799F00AD0A30 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745B6A0D24CF799F00AD0A30 /* UIImageView.swift */; };
+		745B6A1024CF808D00AD0A30 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745B6A0F24CF808D00AD0A30 /* NotificationName.swift */; };
 		74FC8D5424CC8E1200B86BCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FC8D5324CC8E1200B86BCA /* AppDelegate.swift */; };
 		74FC8D5624CC8E1200B86BCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FC8D5524CC8E1200B86BCA /* SceneDelegate.swift */; };
 		74FC8D5824CC8E1200B86BCA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FC8D5724CC8E1200B86BCA /* ViewController.swift */; };
@@ -45,6 +46,7 @@
 		745B6A0824CF702500AD0A30 /* MockData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockData.json; sourceTree = "<group>"; };
 		745B6A0B24CF73D300AD0A30 /* MockDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataProvider.swift; sourceTree = "<group>"; };
 		745B6A0D24CF799F00AD0A30 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		745B6A0F24CF808D00AD0A30 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		74FC8D5024CC8E1200B86BCA /* RCStoryPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RCStoryPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74FC8D5324CC8E1200B86BCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74FC8D5524CC8E1200B86BCA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				74FC8D6824CC8F3500B86BCA /* NIB+Initilizer.swift */,
 				74FC8D6A24CC8F3500B86BCA /* ReusableView.swift */,
 				745B6A0D24CF799F00AD0A30 /* UIImageView.swift */,
+				745B6A0F24CF808D00AD0A30 /* NotificationName.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				745B6A1024CF808D00AD0A30 /* NotificationName.swift in Sources */,
 				74570BB724CD88E400D95A52 /* User.swift in Sources */,
 				745B6A0C24CF73D300AD0A30 /* MockDataProvider.swift in Sources */,
 				74FC8D7724CC90D600B86BCA /* StoryPreviewCell.swift in Sources */,
