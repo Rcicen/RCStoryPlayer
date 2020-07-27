@@ -74,7 +74,7 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
     }
     
     /// Creates and constraints a new imageView to scrollView
-    func createPhotoView() -> UIImageView {
+    func addNewPhotoView() -> UIImageView {
         let photoImageView = UIImageView()
         photoImageView.translatesAutoresizingMaskIntoConstraints = false
         photoImageView.tag = storyIndex + storyContentViewTagIdentifier
@@ -103,7 +103,7 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
                             }
                         }
                     }else {
-                        let newPhotoView = createPhotoView()
+                        let newPhotoView = addNewPhotoView()
                         newPhotoView.ImageWithURL(story.url) { (isSuccess) in
                             if isSuccess {
                                 
@@ -147,7 +147,9 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
             }
         } else {
             //TODO: Go to previous story or previous userStory (Goes to last displayed story index of that user)
-            
+            if storyIndex >= 1 && storyIndex <= storyCount {
+                changeStoryIndex(to: storyIndex - 1)
+            }
         }
         
     }
