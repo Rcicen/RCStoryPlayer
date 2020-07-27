@@ -23,6 +23,10 @@ class StoryPreviewController: UIViewController,ReusableView {
         return flowLayout
     }()
     
+    var storyGroups:StoryGroups?
+    
+    var userSelectedStoryIndex:Int?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,13 +39,15 @@ class StoryPreviewController: UIViewController,ReusableView {
 extension StoryPreviewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return storyGroups?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StoryPreviewCell.reuseIdentifier, for: indexPath) as? StoryPreviewCell else {
             return UICollectionViewCell()
         }
+        cell.storyGroup = storyGroups?.storyGroups[indexPath.row]
+        cell.storyIndex = 0 //Will be removed
         cell.containerView.backgroundColor = UIColor(red: CGFloat(arc4random()) / CGFloat(UInt32.max),
                                                      green: CGFloat(arc4random()) / CGFloat(UInt32.max),
                                                      blue: CGFloat(arc4random()) / CGFloat(UInt32.max),

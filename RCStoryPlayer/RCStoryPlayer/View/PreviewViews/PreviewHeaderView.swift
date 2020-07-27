@@ -50,6 +50,8 @@ class PreviewHeaderView:UIView {
         return button
     }()
     
+    var storyGroup:StoryGroup?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViews()
@@ -92,7 +94,7 @@ class PreviewHeaderView:UIView {
             imageView.widthAnchor.constraint(equalToConstant: 50),
             
             closeButton.centerYAnchor.constraint(equalTo: detailStackView.centerYAnchor),
-            closeButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: edgeMargin),
+            closeButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -edgeMargin),
             closeButton.heightAnchor.constraint(equalToConstant: 24),
             closeButton.widthAnchor.constraint(equalToConstant: 24)
         ])

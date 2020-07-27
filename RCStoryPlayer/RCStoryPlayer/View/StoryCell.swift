@@ -14,6 +14,13 @@ class StoryCell:UICollectionViewCell,ReusableView {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     
+    var story:StoryGroup? {
+        didSet {
+            nameLabel.text = story?.user.name
+        }
+    }
+
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
