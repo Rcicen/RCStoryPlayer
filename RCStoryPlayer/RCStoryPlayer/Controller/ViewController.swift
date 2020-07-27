@@ -18,6 +18,10 @@ class ViewController: UIViewController {
         }
     }
 
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         _ = MockDataProvider.shared.retrieve(from: "MockData", StoryGroups.self).done({ (storyGroups) in
