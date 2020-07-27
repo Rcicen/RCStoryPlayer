@@ -11,7 +11,6 @@ import UIKit
 public let progressBarBackgroundViewTagIdentifier = 100
 public let progressBarViewTagIdentifier = 200
 
-
 class PreviewHeaderView:UIView {
     
     var progressStackView:UIStackView = {

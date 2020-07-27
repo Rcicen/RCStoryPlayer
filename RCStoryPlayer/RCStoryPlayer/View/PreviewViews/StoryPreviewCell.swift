@@ -10,6 +10,11 @@ import UIKit
 
 let storyContentViewTagIdentifier = 300
 
+protocol StoryPreviewCellDelegate:class {
+    func goToPreviousStoryGroup()
+    func goToNextStoryGroup()
+}
+
 class StoryPreviewCell: UICollectionViewCell,ReusableView {
     
     private lazy var tapGesture:UITapGestureRecognizer = {
@@ -51,9 +56,12 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
     
     var storyIndex:Int = 0 {
         didSet {
-            storyIndexChanged()
+            storyIndexDidChanged()
         }
     }
+    
+    weak var delegate:StoryPreviewCellDelegate?
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -90,28 +98,32 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
         return photoImageView
     }
     
-    func storyIndexChanged() {
+    func storyIndexDidChanged() {
         if storyIndex < storyGroup?.storyCount ?? 0 {
             if let story = storyGroup?.stories[storyIndex] {
                 if story.kind == .image {
                     if let currentPhotoView = self.currentPhotoView {
-                        currentPhotoView.ImageWithURL(story.url) { (isSuccess) in
+                        currentPhotoView.ImageWithURL(story.url) { [weak self] (isSuccess) in
+                            guard let strongSelf = self else { return }
                             if isSuccess {
-                                
+                                strongSelf.startProgressBar(for: .image)
                             }else {
-                                
+                                //TODO:Handle nil image
                             }
                         }
                     }else {
                         let newPhotoView = addNewPhotoView()
-                        newPhotoView.ImageWithURL(story.url) { (isSuccess) in
+                        newPhotoView.ImageWithURL(story.url) { [weak self] (isSuccess) in
+                            guard let strongSelf = self else { return }
                             if isSuccess {
-                                
+                                strongSelf.startProgressBar(for: .image)
                             }else {
                                 
                             }
                         }
                     }
+                } else if story.kind == .video {
+                    //TODO: In case of video support
                 }
             }
         }
@@ -127,19 +139,67 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
             storyIndex = index
         } else {
             //TODO: Move to the next StoryGroup ( CollectionView needs to move next index)
+            delegate?.goToNextStoryGroup()
         }
     }
     
+    /// Returns the progressBar at given storyIndex if exists
+    func getProgressBar(at index:Int) -> IGSnapProgressView? {
+        let progressStackView = storyHeaderView.progressStackView
+        guard progressStackView.arrangedSubviews.count > 0 else {
+            return nil
+        }
+        guard progressStackView.arrangedSubviews.count > index else {
+            return nil
+        }
+        let progressBackgroundView = progressStackView.arrangedSubviews[index]
+        let progressBar = progressBackgroundView.subviews.first as? IGSnapProgressView
+        progressBar?.story = storyGroup
+        return progressBar
+    }
+
+    func startProgressBar(for kind:MediaContentType) {
+        DispatchQueue.main.async { [weak self] in
+            guard let strongSelf = self else { return }
+            if kind == .image && strongSelf.currentPhotoView?.image != nil {
+                guard let progressBar = strongSelf.getProgressBar(at: strongSelf.storyIndex), let holderView = progressBar.superview  else { return }
+                progressBar.snapIndex = strongSelf.storyIndex
+                progressBar.start(with: 5.0, holderView: holderView, completion: { [weak self] (storyIndex, isCancelledAbruptly) in
+                    guard let strongSelf = self else { return }
+                    if isCancelledAbruptly == false {
+                        strongSelf.changeStoryIndex(to:strongSelf.storyIndex + 1)
+                    }
+                })
+            } else if kind == .video {
+                //TODO:
+            }
+        }
+    }
+    
+    func stopProgressBar(at index:Int) {
+        let progressBar = getProgressBar(at: index)
+        progressBar?.updateWithConstraint(as: .Empty)
+        progressBar?.stop()
+        
+    }
+    
+    func goToPreviousStory() {
+        let progressBar = getProgressBar(at: storyIndex)
+        progressBar?.updateWithConstraint(as: .Empty)
+        progressBar?.stop()
+        let previousStoryIndex = storyIndex - 1
+        let preProgressBar = getProgressBar(at: previousStoryIndex)
+        preProgressBar?.reset()
+        changeStoryIndex(to: previousStoryIndex)
+    }
+
     
     //MARK: - GESTURE RECOGNIZER ACTIONS
     @objc func didTapScreen(_ sender: UITapGestureRecognizer) {
-        //TODO: Configure
         guard let storyCount = storyGroup?.storyCount else {
             return
         }
-        
         let touchLocation = sender.location(ofTouch: 0, in: scrollView)
-        
         if touchLocation.x > scrollView.contentOffset.x + (scrollView.frame.width/2) {
             //TODO: Go to next story or next userStory (Goes to last displayed story index of that user)
             if storyIndex >= 0 && storyIndex <= storyCount {
@@ -148,10 +208,9 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
         } else {
             //TODO: Go to previous story or previous userStory (Goes to last displayed story index of that user)
             if storyIndex >= 1 && storyIndex <= storyCount {
-                changeStoryIndex(to: storyIndex - 1)
+                goToPreviousStory()
             }
         }
-        
     }
     
     @objc func didLongPress(_ sender: UILongPressGestureRecognizer) {
