@@ -14,6 +14,6 @@ class User:Codable {
     
     enum CodingKeys: String, CodingKey {
         case name = "name"
-        case imageUrl = "image_url"
+        case imageUrl = "picture"
     }
 }

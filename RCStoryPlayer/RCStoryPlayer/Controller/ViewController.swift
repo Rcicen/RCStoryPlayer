@@ -12,18 +12,26 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    var stories:StoryGroups? {
+        didSet {
+            collectionView.reloadData()
+        }
     }
 
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        _ = MockDataProvider.shared.retrieve(from: "MockData", StoryGroups.self).done({ (storyGroups) in
+            self.stories = storyGroups
+        }).catch({ (error) in
+            print(error)
+        })
+    }
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return stories?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -31,6 +39,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         cell.backgroundColor = UIColor.blue
+        cell.story = stories?.storyGroups[indexPath.row]
         return cell
     }
     
@@ -38,6 +47,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         // TODO: Present Preview Controller
         let previewController = self.storyboard?.instantiateViewController(withIdentifier: StoryPreviewController.reuseIdentifier) as! StoryPreviewController
         previewController.modalPresentationStyle = .overFullScreen
+        previewController.storyGroups = stories
+        previewController.userSelectedStoryIndex = indexPath.row
         self.present(previewController, animated: true, completion: nil)
     }
 }

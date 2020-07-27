@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-RCStoryPlayer/Pods-RCStoryPlayer-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/AnimatedCollectionViewLayout/AnimatedCollectionViewLayout.framework
+${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework

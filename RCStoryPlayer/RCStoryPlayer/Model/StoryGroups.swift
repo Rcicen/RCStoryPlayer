@@ -14,7 +14,7 @@ class StoryGroups:Codable {
     
     enum CodingKeys: String, CodingKey {
         case storyGroups = "story_groups"
-        case count = "count"
+        case count
     }
 }
 
