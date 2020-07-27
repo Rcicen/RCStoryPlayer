@@ -18,8 +18,8 @@ class StoryGroup:Codable {
     var isCancelledAbruptly:Bool = false
     
     enum CodingKeys: String, CodingKey {
-        case user = "user"
-        case stories = "stories"
+        case user
+        case stories  
         case uuid = "id"
         case storyCount = "story_count"
     }

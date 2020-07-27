@@ -8,22 +8,38 @@
 
 import Foundation
 
+enum MediaContentType:String {
+    case image
+    case video
+    case unknown
+}
 
 class Story:Codable {
     /// Content url
     let url: String
-    let storyDate:Date
-    let contentType:String
-    var kind: MediaContentType
+    
+    let storyPublishDate:String
+    
+    private let contentType:String
     
     var timePassed:String {
-        return "5m" //storyDate.timeIntervalSinceNow
+        return storyPublishDate //For the sake of simplicity in creating dummy data and displaying reasonable timePassed information, I have decided to set storyPublishDate as string
+    }
+    
+    var kind: MediaContentType {
+        if contentType == "image" {
+            return .image
+        } else if contentType == "video" {
+            return .video
+        } else {
+            return .unknown
+        }
     }
     
     enum CodingKeys: String, CodingKey {
-        case url = "url"
-        case storyDate = "story_publish_date"
-        case contentType = "media_type"
-        case kind = "media_kind"
+        case url
+        case storyPublishDate = "story_publish_date"
+        case contentType = "media_kind"
+        
     }
 }
