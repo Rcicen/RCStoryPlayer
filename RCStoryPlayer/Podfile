@@ -6,5 +6,6 @@ target 'RCStoryPlayer' do
   use_frameworks!
 
 pod 'AnimatedCollectionViewLayout'
+pod 'PromiseKit'
 
 end

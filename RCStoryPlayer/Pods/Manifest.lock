@@ -1,16 +1,28 @@
 PODS:
   - AnimatedCollectionViewLayout (1.0.1)
+  - PromiseKit (6.13.1):
+    - PromiseKit/CorePromise (= 6.13.1)
+    - PromiseKit/Foundation (= 6.13.1)
+    - PromiseKit/UIKit (= 6.13.1)
+  - PromiseKit/CorePromise (6.13.1)
+  - PromiseKit/Foundation (6.13.1):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.13.1):
+    - PromiseKit/CorePromise
 
 DEPENDENCIES:
   - AnimatedCollectionViewLayout
+  - PromiseKit
 
 SPEC REPOS:
   trunk:
     - AnimatedCollectionViewLayout
+    - PromiseKit
 
 SPEC CHECKSUMS:
   AnimatedCollectionViewLayout: 00f0997fd26f0fd02d8b99765023b95570b5d826
+  PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
 
-PODFILE CHECKSUM: 033833d9aae5f367a21cc1c124af6c0b8afa3926
+PODFILE CHECKSUM: b763960e138457688c8dc127585907040263e291
 
 COCOAPODS: 1.9.1
