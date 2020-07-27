@@ -48,10 +48,6 @@ extension StoryPreviewController: UICollectionViewDelegate, UICollectionViewData
         }
         cell.storyGroup = storyGroups?.storyGroups[indexPath.row]
         cell.storyIndex = 0 //Will be removed
-        cell.containerView.backgroundColor = UIColor(red: CGFloat(arc4random()) / CGFloat(UInt32.max),
-                                                     green: CGFloat(arc4random()) / CGFloat(UInt32.max),
-                                                     blue: CGFloat(arc4random()) / CGFloat(UInt32.max),
-                                                     alpha: 1.0)
         return cell
     }
 }

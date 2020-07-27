@@ -21,6 +21,7 @@ class PreviewHeaderView:UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.cornerRadius = imageView.frame.size.height/2;
         imageView.clipsToBounds = true
+        imageView.image = UIImage(named: "profile_placeholder")
         return imageView
     }()
     
@@ -30,6 +31,7 @@ class PreviewHeaderView:UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .white
         label.font = .systemFont(ofSize: 12, weight: .bold)
+        label.text = "TestUser"
         return label
     }()
     
@@ -39,6 +41,7 @@ class PreviewHeaderView:UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .lightGray
         label.font = .systemFont(ofSize: 12, weight: .regular)
+        label.text = "12m"
         return label
     }()
     

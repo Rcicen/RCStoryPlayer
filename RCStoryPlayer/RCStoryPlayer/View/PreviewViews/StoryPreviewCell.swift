@@ -28,7 +28,6 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
     }()
     
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var containerView: UIView!
     
     let storyHeaderView: PreviewHeaderView = {
         let view = PreviewHeaderView()
@@ -38,7 +37,7 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
     
     /// Returns the photoView at index
     var currentPhotoView: UIImageView? {
-        if let imageView = containerView.subviews.filter({$0.tag == storyIndex + storyContentViewTagIdentifier}).first as? UIImageView {
+        if let imageView = scrollView.subviews.filter({$0.tag == storyIndex + storyContentViewTagIdentifier}).first as? UIImageView {
             return imageView
         }
         return nil
@@ -50,7 +49,11 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
         }
     }
     
-    var storyIndex:Int = 0
+    var storyIndex:Int = 0 {
+        didSet {
+            storyIndexChanged()
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -63,7 +66,7 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
     func installStoryHeaderViewConstraints() {
         addSubview(storyHeaderView)
         NSLayoutConstraint.activate([
-            storyHeaderView.topAnchor.constraint(equalTo: self.topAnchor),
+            storyHeaderView.topAnchor.constraint(equalTo: self.topAnchor,constant: 10),
             storyHeaderView.leftAnchor.constraint(equalTo: self.leftAnchor),
             storyHeaderView.rightAnchor.constraint(equalTo: self.rightAnchor),
             storyHeaderView.heightAnchor.constraint(equalToConstant: 100)
@@ -75,13 +78,14 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
         let photoImageView = UIImageView()
         photoImageView.translatesAutoresizingMaskIntoConstraints = false
         photoImageView.tag = storyIndex + storyContentViewTagIdentifier
-        containerView.addSubview(photoImageView)
+        scrollView.addSubview(photoImageView)
         
         NSLayoutConstraint.activate([
-            photoImageView.topAnchor.constraint(equalTo: containerView.topAnchor),
-            photoImageView.leadingAnchor.constraint(equalTo: storyIndex == 0 ? containerView.leadingAnchor : containerView.subviews[storyIndex - 1].trailingAnchor),
-            photoImageView.heightAnchor.constraint(equalTo: containerView.heightAnchor),
-            photoImageView.widthAnchor.constraint(equalTo: containerView.widthAnchor)
+            photoImageView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            photoImageView.leadingAnchor.constraint(equalTo: storyIndex == 0 ? scrollView.leadingAnchor : scrollView.subviews[storyIndex - 1].trailingAnchor),
+            photoImageView.heightAnchor.constraint(equalTo: scrollView.heightAnchor),
+            photoImageView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
+            
         ])
         return photoImageView
     }
@@ -117,7 +121,7 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
     func changeStoryIndex(to index:Int) {
         guard let storyCount = storyGroup?.storyCount else { return }
         if index >= 0 && index < storyCount {
-            let contentOffSet = CGPoint(x: containerView.frame.width * CGFloat(index), y: 0)
+            let contentOffSet = CGPoint(x: scrollView.frame.width * CGFloat(index), y: 0)
             scrollView.setContentOffset(contentOffSet, animated: false)
             storyGroup?.lastPlayedStoryIndex = index
             storyIndex = index
@@ -133,7 +137,7 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
         guard let storyCount = storyGroup?.storyCount else {
             return
         }
-
+        
         let touchLocation = sender.location(ofTouch: 0, in: scrollView)
         
         if touchLocation.x > scrollView.contentOffset.x + (scrollView.frame.width/2) {
