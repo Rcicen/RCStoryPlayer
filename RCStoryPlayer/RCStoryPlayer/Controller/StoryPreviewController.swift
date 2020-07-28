@@ -21,6 +21,8 @@ class StoryPreviewController: UIViewController,ReusableView {
     
     var visibleCellUuid:Int?
     
+    var blockOnce = true
+    
     lazy var previewFlowLayout:AnimatedCollectionViewLayout = {
         let flowLayout = AnimatedCollectionViewLayout()
         flowLayout.animator = CubeAttributesAnimator(perspective: -1/100, totalAngle: .pi/15)
@@ -90,6 +92,11 @@ extension StoryPreviewController: UICollectionViewDelegate, UICollectionViewData
         if indexPath.row == currentCellIndex {
             let lastPlayedStoryIndex = storyGroups?.storyGroups[userSelectedStoryIndex + currentCellIndex].lastPlayedStoryIndex ?? (cell.storyGroup?.lastPlayedStoryIndex ?? 0)
             cell.prepareCell(lastIndex: lastPlayedStoryIndex)
+            if blockOnce {
+                blockOnce = !blockOnce
+                return
+            }
+            cell.pauseProgressBar()
         }
     }
     
@@ -99,18 +106,19 @@ extension StoryPreviewController: UICollectionViewDelegate, UICollectionViewData
             cell1.frame.minX < cell2.frame.minX
         }
         guard let visibleCell = visibleCells.first as? StoryPreviewCell, let visibleIndex = collectionView.indexPath(for: visibleCell)?.row else { return }
-        
-        if visibleCellUuid == visibleCell.storyGroup?.uuid {
+//        if visibleCellUuid == visibleCell.storyGroup?.uuid {
             currentCellIndex = visibleIndex
-            if let lastPlayedStoryIndex = visibleCell.storyGroup?.lastPlayedStoryIndex {
+            if visibleCell.longPressGestureState == nil, let lastPlayedStoryIndex = visibleCell.storyGroup?.lastPlayedStoryIndex {
                 visibleCell.getProgressBar(at: lastPlayedStoryIndex)?.resume()
+//                visibleCell.stopProgressBar(at: lastPlayedStoryIndex)
+//                visibleCell.startProgressBar(for: .image)
             }
-            //TODO: LongPressGestureState handle edilmeli
-        } else {
-            guard let cell = cell as? StoryPreviewCell else { return }
-            cell.startProgressBar(for: .image)
-        }
-        
+            visibleCell.longPressGestureState = nil
+//        }
+//        else {
+//            guard let cell = cell as? StoryPreviewCell else { return }
+//            cell.startProgressBar(for: .image)
+//        }
         
         
     }
@@ -125,11 +133,21 @@ extension StoryPreviewController: UICollectionViewDelegateFlowLayout {
 
 extension StoryPreviewController:StoryPreviewCellDelegate {
     func goToPreviousStoryGroup() {
+        if currentCellIndex > 0 {
+            currentCellIndex -= 1
+            let indexPath = IndexPath(row: currentCellIndex, section: 0)
+            collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
+        }
         
     }
     
     func goToNextStoryGroup() {
-        
+        let index = userSelectedStoryIndex + currentCellIndex
+        if index < storyGroups?.count ?? 0 {
+            currentCellIndex += 1
+            let indexPath = IndexPath(row: currentCellIndex, section: 0)
+            collectionView.scrollToItem(at: indexPath, at: .right, animated: true)
+        }
     }
 }
 
@@ -139,17 +157,6 @@ extension StoryPreviewController:UIScrollViewDelegate {
         guard let visibleCell = collectionView.visibleCells.first as? StoryPreviewCell, let storyGroup = visibleCell.storyGroup else {
             return
         }
-        collectionView.visibleCells.forEach { (cell) in
-            let cell = cell as! StoryPreviewCell
-            cell.pauseProgressBar(at: cell.storyGroup?.lastPlayedStoryIndex)
-        }
-//        print("NewCellIndex: \(newCellIndex) VisibleCellIndex: \(visibleCellIndex)")
-//        guard let visibleCell = collectionView.visibleCells.filter { $0.contentView.tag == currentCellIndex + cellContentViewTagIdentifier }.first as? StoryPreviewCell,
-//            let storyGroup = visibleCell.storyGroup else {
-//            return
-//        }
-//
-//        visibleCell.pauseProgressBar(at: storyGroup.lastPlayedStoryIndex)
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

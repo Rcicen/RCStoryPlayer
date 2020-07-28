@@ -33,6 +33,8 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
         return recognizer
     }()
     
+    var longPressGestureState:UILongPressGestureRecognizer.State?
+    
     @IBOutlet weak var scrollView: UIScrollView!
     
     let storyHeaderView: PreviewHeaderView = {
@@ -208,9 +210,7 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
     }
     
     func goToPreviousStory() {
-        let progressBar = getProgressBar(at: storyIndex)
-        progressBar?.updateWithConstraint(as: .Empty)
-        progressBar?.stop()
+        stopProgressBar(at: storyIndex)
         let previousStoryIndex = storyIndex - 1
         let preProgressBar = getProgressBar(at: previousStoryIndex)
         preProgressBar?.reset()
@@ -247,11 +247,12 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
     
     @objc func didLongPress(_ sender: UILongPressGestureRecognizer) {
         //TODO: Configure
+        longPressGestureState = sender.state
         if sender.state == .began ||  sender.state == .ended {
             if(sender.state == .began) {
-                //TODO: Pause story
+                getProgressBar(at: storyIndex)?.pause()
             } else {
-                //TODO: Resume story
+                getProgressBar(at: storyIndex)?.resume()
             }
         }
     }
@@ -264,5 +265,10 @@ extension StoryPreviewCell:UIScrollViewDelegate {
 }
 
 extension StoryPreviewCell:UIGestureRecognizerDelegate {
-    // TODO: Simultanious recognition
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        if(gestureRecognizer is UISwipeGestureRecognizer) {
+            return true
+        }
+        return false
+    }
 }
