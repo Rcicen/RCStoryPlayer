@@ -71,6 +71,8 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        NotificationCenter.default.addObserver(self, selector: #selector(didEnterBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
         scrollView.delegate = self
         scrollView.addGestureRecognizer(tapGesture)
         scrollView.addGestureRecognizer(longPressGesture)
@@ -255,6 +257,16 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
                 getProgressBar(at: storyIndex)?.resume()
             }
         }
+    }
+    
+    //MARK: - NOTIFICATION CENTER FUNCTIONS
+    
+    @objc func didEnterBackground() {
+        stopProgressBar(at: storyIndex)
+    }
+    
+    @objc func willEnterForeground() {
+        startProgressBar(for: .image)
     }
 }
 
