@@ -17,6 +17,13 @@ class StoryCell:UICollectionViewCell,ReusableView {
     var story:StoryGroup? {
         didSet {
             nameLabel.text = story?.user.name
+            if let url = story?.user.imageUrl {
+                profileImageView.image(withUrl: url) { [weak self] (isSuccess) in
+                    if !isSuccess {
+                        self?.profileImageView.image = UIImage(named: "profile_placeholder")
+                    }
+                }
+            }
         }
     }
 

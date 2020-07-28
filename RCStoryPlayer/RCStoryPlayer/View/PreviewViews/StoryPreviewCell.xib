@@ -17,37 +17,24 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Uy-3U-d0j">
-                        <rect key="frame" x="37" y="20" width="455" height="474"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dTo-4B-N8T">
-                                <rect key="frame" x="0.0" y="0.0" width="556" height="556"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="0.43137254899999999" green="0.69019607839999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="dTo-4B-N8T" firstAttribute="top" secondItem="i7m-bJ-VRb" secondAttribute="top" id="LhP-aP-1PF"/>
-                            <constraint firstItem="dTo-4B-N8T" firstAttribute="width" secondItem="3Uy-3U-d0j" secondAttribute="width" priority="250" id="YY8-wz-H0D"/>
-                            <constraint firstItem="i7m-bJ-VRb" firstAttribute="trailing" secondItem="dTo-4B-N8T" secondAttribute="trailing" id="din-7D-tIs"/>
-                            <constraint firstItem="dTo-4B-N8T" firstAttribute="height" secondItem="3Uy-3U-d0j" secondAttribute="height" id="m6Q-nw-Tan"/>
-                            <constraint firstItem="dTo-4B-N8T" firstAttribute="leading" secondItem="i7m-bJ-VRb" secondAttribute="leading" id="maO-O0-RIk"/>
-                            <constraint firstItem="i7m-bJ-VRb" firstAttribute="bottom" secondItem="dTo-4B-N8T" secondAttribute="bottom" id="oRb-2x-WWd"/>
-                        </constraints>
+                        <rect key="frame" x="51" y="41" width="455" height="474"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <viewLayoutGuide key="contentLayoutGuide" id="hQP-Lt-9QB"/>
                         <viewLayoutGuide key="frameLayoutGuide" id="i7m-bJ-VRb"/>
                     </scrollView>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="3Uy-3U-d0j" secondAttribute="trailing" id="4CS-ye-sD9"/>
-                <constraint firstItem="3Uy-3U-d0j" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="bz2-eA-NFo"/>
-                <constraint firstItem="3Uy-3U-d0j" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="gG6-ie-nGE"/>
-                <constraint firstAttribute="bottom" secondItem="3Uy-3U-d0j" secondAttribute="bottom" id="uaC-8W-lV7"/>
+                <constraint firstItem="3Uy-3U-d0j" firstAttribute="width" secondItem="ZTg-uK-7eu" secondAttribute="width" id="0Yr-Pj-p0N"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="top" secondItem="3Uy-3U-d0j" secondAttribute="top" id="TV2-Jo-Jvi"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="3Uy-3U-d0j" secondAttribute="bottom" id="XlF-TQ-Hyf"/>
+                <constraint firstItem="3Uy-3U-d0j" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="Z2P-8c-iO4"/>
+                <constraint firstItem="3Uy-3U-d0j" firstAttribute="height" secondItem="ZTg-uK-7eu" secondAttribute="height" id="j08-bZ-0sH"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="3Uy-3U-d0j" secondAttribute="trailing" id="uB8-1E-dhT"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="556" height="556"/>
             <connections>
-                <outlet property="containerView" destination="dTo-4B-N8T" id="18L-12-1Ce"/>
                 <outlet property="scrollView" destination="3Uy-3U-d0j" id="1uq-a9-ZGZ"/>
             </connections>
             <point key="canvasLocation" x="234.78260869565219" y="173.4375"/>
