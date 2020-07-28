@@ -33,19 +33,24 @@ class StoryPreviewController: UIViewController,ReusableView {
         return flowLayout
     }()
     
+    private let swipeDownGesture: UISwipeGestureRecognizer = {
+           let gesture = UISwipeGestureRecognizer()
+           gesture.direction = .down
+           return gesture
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(StoryPreviewCell.nib, forCellWithReuseIdentifier: StoryPreviewCell.reuseIdentifier)
         collectionView.collectionViewLayout = previewFlowLayout
         NotificationCenter.default.addObserver(self, selector: #selector(dismissPreviewController), name: .dismissPreviewController, object: nil)
-        scrollToUserSelectedStoryGroup()
+        swipeDownGesture.addTarget(self, action: #selector(dismissPreviewController))
+        collectionView.addGestureRecognizer(swipeDownGesture)
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        
+        scrollToUserSelectedStoryGroup()
     }
     
     func scrollToUserSelectedStoryGroup() {
@@ -53,7 +58,7 @@ class StoryPreviewController: UIViewController,ReusableView {
         self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
         self.userSelectedStoryIndex = 0
     }
-    
+
     @objc func dismissPreviewController() {
         NotificationCenter.default.removeObserver(self)
         dismiss(animated: true, completion: nil)
