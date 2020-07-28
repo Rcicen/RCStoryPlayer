@@ -1,6 +1,96 @@
 {
-  "count": 4,
+  "count": 8,
   "story_groups": [
+    {
+      "user": {
+        "name": "Michel",
+        "picture": "https://randomuser.me/api/portraits/men/1.jpg"
+      },
+      "stories": [
+        {
+          "media_kind": "image",
+          "url": "https://i.picsum.photos/id/872/375/667.jpg?hmac=-FYwLpE6ftATKuC3ktFkBcHRD65LrdXlpJ1nB50oIGU",
+          "story_publish_date": "1d"
+        },
+        {
+          "media_kind": "image",
+          "url": "https://i.picsum.photos/id/969/375/667.jpg?hmac=DKVAMfa0zp64c7e0VVhv8CkqPs21st05ZZb2jSrOQSI",
+          "story_publish_date": "8h"
+        },
+        {
+          "media_kind": "image",
+          "url": "https://i.picsum.photos/id/6/375/667.jpg?hmac=zvU3qbR1ZPTeV4JLbQmz4rXDuBAukFVmL9oFDt4oQ7U",
+          "story_publish_date": "3h"
+        },
+        {
+          "media_kind": "image",
+          "url": "https://i.picsum.photos/id/5/375/667.jpg?hmac=1zWiKyPWOpY7VmfAdwQ2g8NRIwaSN_sqgqauC8lgLkA",
+          "story_publish_date": "2m"
+        }
+      ],
+      "id": 123456,
+      "story_count": 4
+    },
+    {
+      "user": {
+        "name": "Mike",
+        "picture": "https://randomuser.me/api/portraits/men/52.jpg"
+      },
+      "stories": [
+        {
+          "media_kind": "image",
+          "url": "https://i.picsum.photos/id/827/375/667.jpg?hmac=B5O0FMmi_v7SGmkVrpZbgsLN1fx2zcH_2XDw6LST4Ho",
+          "story_publish_date": "12h"
+        },
+        {
+          "media_kind": "image",
+          "url": "https://i.picsum.photos/id/158/375/667.jpg?hmac=z-imFPqZip3o8XPD_nAzDAs_tsVMsA3db4TxYlaZUwQ",
+          "story_publish_date": "10h"
+        }
+      ],
+      "id": 123456,
+      "story_count": 2
+    },
+    {
+      "user": {
+        "name": "Linda",
+        "picture": "https://randomuser.me/api/portraits/women/65.jpg"
+      },
+      "stories": [
+        {
+          "media_kind": "image",
+          "url": "https://i.picsum.photos/id/1005/375/667.jpg?hmac=RFdy70yCGRcAZJ86XXvvyHSxKEPEB5z5oSneXc5eajU",
+          "story_publish_date": "4m"
+        }
+      ],
+      "id": 123456,
+      "story_count": 1
+    },
+    {
+      "user": {
+        "name": "Kate",
+        "picture": "https://randomuser.me/api/portraits/women/24.jpg"
+      },
+      "stories": [
+        {
+          "media_kind": "image",
+          "url": "https://i.picsum.photos/id/642/375/667.jpg?hmac=ASndnPompDneNaQOkENuylgkQxGaSFlBolGQ-dt0swQ",
+          "story_publish_date": "4h"
+        },
+        {
+          "media_kind": "image",
+          "url": "https://i.picsum.photos/id/316/375/667.jpg?hmac=JzeGgjepk2itiw1uoj9YpWQevnBJMBsixkBlMOZnwq8",
+          "story_publish_date": "3h"
+        },
+        {
+          "media_kind": "image",
+          "url": "https://i.picsum.photos/id/419/375/667.jpg?hmac=DgDtxcHG2SxmqZpQQa9kxVkvEC4NvqxfsCqfKRqqJJ4",
+          "story_publish_date": "3h"
+        }
+      ],
+      "id": 123456,
+      "story_count": 3
+    },
     {
       "user": {
         "name": "Michel",

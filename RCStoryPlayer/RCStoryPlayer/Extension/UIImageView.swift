@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIImageView {
-    func ImageWithURL(_ string: String, completion:@escaping ((Bool)->()) ) {
+    func image(withUrl string: String, completion:@escaping ((Bool)->()) ) {
         self.image = nil
         if let url = URL(string: string) {
             URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in

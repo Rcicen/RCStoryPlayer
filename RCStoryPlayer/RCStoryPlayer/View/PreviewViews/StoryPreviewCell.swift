@@ -9,6 +9,7 @@
 import UIKit
 
 let storyContentViewTagIdentifier = 300
+let cellContentViewTagIdentifier = 400
 
 protocol StoryPreviewCellDelegate:class {
     func goToPreviousStoryGroup()
@@ -51,6 +52,9 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
     var storyGroup:StoryGroup? {
         didSet {
             storyHeaderView.storyGroup = storyGroup
+            guard let uuid = storyGroup?.uuid else { return }
+            contentView.tag = uuid + cellContentViewTagIdentifier
+            
         }
     }
     
@@ -98,12 +102,26 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
         return photoImageView
     }
     
+    func changeStoryIndex(to index:Int) {
+        guard let storyCount = storyGroup?.storyCount else { return }
+        if index >= 0 && index < storyCount {
+            let contentOffSet = CGPoint(x: scrollView.frame.width * CGFloat(index), y: 0)
+            scrollView.setContentOffset(contentOffSet, animated: false)
+            storyGroup?.lastPlayedStoryIndex = index
+            storyIndex = index
+        } else if index >= storyCount {
+            delegate?.goToNextStoryGroup()
+        } else if index < 0 {
+            delegate?.goToPreviousStoryGroup()
+        }
+    }
+    
     func storyIndexDidChanged() {
         if storyIndex < storyGroup?.storyCount ?? 0 {
             if let story = storyGroup?.stories[storyIndex] {
                 if story.kind == .image {
                     if let currentPhotoView = self.currentPhotoView {
-                        currentPhotoView.ImageWithURL(story.url) { [weak self] (isSuccess) in
+                        currentPhotoView.image(withUrl: story.url) { [weak self] (isSuccess) in
                             guard let strongSelf = self else { return }
                             if isSuccess {
                                 strongSelf.startProgressBar(for: .image)
@@ -113,7 +131,7 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
                         }
                     }else {
                         let newPhotoView = addNewPhotoView()
-                        newPhotoView.ImageWithURL(story.url) { [weak self] (isSuccess) in
+                        newPhotoView.image(withUrl: story.url) { [weak self] (isSuccess) in
                             guard let strongSelf = self else { return }
                             if isSuccess {
                                 strongSelf.startProgressBar(for: .image)
@@ -129,19 +147,7 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
         }
     }
     
-    
-    func changeStoryIndex(to index:Int) {
-        guard let storyCount = storyGroup?.storyCount else { return }
-        if index >= 0 && index < storyCount {
-            let contentOffSet = CGPoint(x: scrollView.frame.width * CGFloat(index), y: 0)
-            scrollView.setContentOffset(contentOffSet, animated: false)
-            storyGroup?.lastPlayedStoryIndex = index
-            storyIndex = index
-        } else {
-            //TODO: Move to the next StoryGroup ( CollectionView needs to move next index)
-            delegate?.goToNextStoryGroup()
-        }
-    }
+    //MARK: - PROGRESSBAR FUNCTIONS
     
     /// Returns the progressBar at given storyIndex if exists
     func getProgressBar(at index:Int) -> IGSnapProgressView? {
@@ -149,15 +155,12 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
         guard progressStackView.arrangedSubviews.count > 0 else {
             return nil
         }
-        guard progressStackView.arrangedSubviews.count > index else {
-            return nil
-        }
-        let progressBackgroundView = progressStackView.arrangedSubviews[index]
-        let progressBar = progressBackgroundView.subviews.first as? IGSnapProgressView
+        let progressBackgroundView = progressStackView.arrangedSubviews.filter({$0.tag == index + progressBarBackgroundViewTagIdentifier }).first
+        let progressBar = progressBackgroundView?.subviews.first as? IGSnapProgressView
         progressBar?.story = storyGroup
         return progressBar
     }
-
+    
     func startProgressBar(for kind:MediaContentType) {
         DispatchQueue.main.async { [weak self] in
             guard let strongSelf = self else { return }
@@ -180,7 +183,28 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
         let progressBar = getProgressBar(at: index)
         progressBar?.updateWithConstraint(as: .Empty)
         progressBar?.stop()
-        
+    }
+    
+    func pauseProgressBar(at index:Int? = nil) {
+        if let index = index {
+            getProgressBar(at: index)?.pause()
+        }
+        else {
+            guard let lastPlayedIndex = storyGroup?.lastPlayedStoryIndex else { return }
+            getProgressBar(at: lastPlayedIndex)?.pause()
+        }
+    }
+    
+    func fillProgressBar(at index:Int) {
+        let progressBar = getProgressBar(at: index)
+        progressBar?.updateWithConstraint(as: .Full)
+    }
+    
+    func fillProgressBar(until index:Int) {
+        guard index > 0 else { return }
+        for i in 0..<index {
+            fillProgressBar(at: i)
+        }
     }
     
     func goToPreviousStory() {
@@ -192,24 +216,32 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
         preProgressBar?.reset()
         changeStoryIndex(to: previousStoryIndex)
     }
-
+    
+    func goToNextStory() {
+        stopProgressBar(at: storyIndex)
+        fillProgressBar(at: storyIndex)
+        changeStoryIndex(to: storyIndex + 1)
+    }
+    
+    /// PreparesCell on cell willDisplay
+    func prepareCell(lastIndex:Int) {
+        storyHeaderView.clearProgressBars()
+        storyHeaderView.configureProgressBar()
+        fillProgressBar(until: lastIndex)
+        storyIndex = lastIndex
+    }
     
     //MARK: - GESTURE RECOGNIZER ACTIONS
+    
     @objc func didTapScreen(_ sender: UITapGestureRecognizer) {
         guard let storyCount = storyGroup?.storyCount else {
             return
         }
         let touchLocation = sender.location(ofTouch: 0, in: scrollView)
         if touchLocation.x > scrollView.contentOffset.x + (scrollView.frame.width/2) {
-            //TODO: Go to next story or next userStory (Goes to last displayed story index of that user)
-            if storyIndex >= 0 && storyIndex <= storyCount {
-                changeStoryIndex(to: storyIndex + 1)
-            }
+            goToNextStory()
         } else {
-            //TODO: Go to previous story or previous userStory (Goes to last displayed story index of that user)
-            if storyIndex >= 1 && storyIndex <= storyCount {
-                goToPreviousStory()
-            }
+            goToPreviousStory()
         }
     }
     

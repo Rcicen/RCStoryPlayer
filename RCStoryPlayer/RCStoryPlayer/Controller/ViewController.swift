@@ -24,12 +24,23 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchData()
+        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.minimumLineSpacing = 10
+            flowLayout.sectionInset.left = 10
+            flowLayout.sectionInset.top = 15
+            collectionView.collectionViewLayout = flowLayout
+        }
+    }
+    
+    func fetchData() {
         _ = MockDataProvider.shared.retrieve(from: "MockData", StoryGroups.self).done({ (storyGroups) in
-            self.stories = storyGroups
+                self.stories = storyGroups
         }).catch({ (error) in
             print(error)
         })
     }
+
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -42,7 +53,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StoryCell.reuseIdentifier, for: indexPath) as? StoryCell else {
             return UICollectionViewCell()
         }
-        cell.backgroundColor = UIColor.blue
         cell.story = stories?.storyGroups[indexPath.row]
         return cell
     }
