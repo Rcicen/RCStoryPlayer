@@ -23,6 +23,8 @@ class StoryPreviewController: UIViewController,ReusableView {
     
     var blockOnce = true
     
+    var executeOnce = true
+    
     lazy var previewFlowLayout:AnimatedCollectionViewLayout = {
         let flowLayout = AnimatedCollectionViewLayout()
         flowLayout.animator = CubeAttributesAnimator(perspective: -1/100, totalAngle: .pi/15)
@@ -39,18 +41,27 @@ class StoryPreviewController: UIViewController,ReusableView {
            return gesture
     }()
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(StoryPreviewCell.nib, forCellWithReuseIdentifier: StoryPreviewCell.reuseIdentifier)
         collectionView.collectionViewLayout = previewFlowLayout
+        collectionView.delegate = self
+        collectionView.dataSource = self
         NotificationCenter.default.addObserver(self, selector: #selector(dismissPreviewController), name: .dismissPreviewController, object: nil)
         swipeDownGesture.addTarget(self, action: #selector(dismissPreviewController))
         collectionView.addGestureRecognizer(swipeDownGesture)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        scrollToUserSelectedStoryGroup()
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if executeOnce {
+            scrollToUserSelectedStoryGroup()
+            executeOnce = !executeOnce
+        }
     }
     
     func scrollToUserSelectedStoryGroup() {
@@ -132,7 +143,7 @@ extension StoryPreviewController: UICollectionViewDelegate, UICollectionViewData
 
 extension StoryPreviewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return view.bounds.size
+        return collectionView.bounds.size
     }
 }
 

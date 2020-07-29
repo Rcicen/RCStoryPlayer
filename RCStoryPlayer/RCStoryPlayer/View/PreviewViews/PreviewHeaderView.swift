@@ -30,7 +30,6 @@ class PreviewHeaderView:UIView {
     let imageView:UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.layer.cornerRadius = imageView.frame.size.height/2;
         imageView.clipsToBounds = true
         imageView.image = UIImage(named: "profile_placeholder")
         return imageView
@@ -50,8 +49,8 @@ class PreviewHeaderView:UIView {
     let timeLabel:UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .lightGray
-        label.font = .systemFont(ofSize: 12, weight: .regular)
+        label.textColor = .white
+        label.font = .systemFont(ofSize: 12, weight: .medium)
         label.text = "12m"
         return label
     }()
@@ -76,6 +75,13 @@ class PreviewHeaderView:UIView {
         configureProgressBar()
         installDetailStackView()
         configureDetailViewConstraints()
+        if let user = storyGroup?.user {
+            imageView.image(withUrl: user.imageUrl, completion: {_ in
+                self.imageView.layer.cornerRadius = self.imageView.frame.size.height/2;
+            })
+            userNameLabel.text = user.name
+        }
+        
     }
     
     /// Configures progressBars & loads them to progressStackView.

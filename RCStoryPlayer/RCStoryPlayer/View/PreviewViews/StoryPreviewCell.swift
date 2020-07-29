@@ -82,28 +82,41 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
     func installStoryHeaderViewConstraints() {
         addSubview(storyHeaderView)
         NSLayoutConstraint.activate([
-            storyHeaderView.topAnchor.constraint(equalTo: self.topAnchor,constant: 10),
-            storyHeaderView.leftAnchor.constraint(equalTo: self.leftAnchor),
-            storyHeaderView.rightAnchor.constraint(equalTo: self.rightAnchor),
+            storyHeaderView.topAnchor.constraint(equalTo:safeAreaLayoutGuide.topAnchor,constant:10),
+            storyHeaderView.leftAnchor.constraint(equalTo:leftAnchor),
+            storyHeaderView.rightAnchor.constraint(equalTo:rightAnchor),
             storyHeaderView.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
     
     /// Creates and constraints a new imageView to scrollView
-    func addNewPhotoView() -> UIImageView {
+    func addNewPhotoView(for index:Int? = nil) -> UIImageView {
+        let imageViewIndex = index != nil ? index : storyIndex
         let photoImageView = UIImageView()
         photoImageView.translatesAutoresizingMaskIntoConstraints = false
-        photoImageView.tag = storyIndex + storyContentViewTagIdentifier
+        photoImageView.tag = imageViewIndex! + storyContentViewTagIdentifier
         scrollView.addSubview(photoImageView)
         
         NSLayoutConstraint.activate([
             photoImageView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            photoImageView.leadingAnchor.constraint(equalTo: storyIndex == 0 ? scrollView.leadingAnchor : scrollView.subviews[storyIndex - 1].trailingAnchor),
+            photoImageView.leadingAnchor.constraint(equalTo: imageViewIndex == 0 ? scrollView.leadingAnchor : scrollView.subviews[imageViewIndex! - 1].trailingAnchor),
             photoImageView.heightAnchor.constraint(equalTo: scrollView.heightAnchor),
             photoImageView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
             
         ])
+        scrollView.layoutIfNeeded()
         return photoImageView
+    }
+    
+    func addMissingImageViews() {
+        let missingViewCount = storyIndex - scrollView.subviews.count
+        if missingViewCount > 0 {
+            for i in (1...missingViewCount).reversed() {
+                addNewPhotoView(for: storyIndex - i)
+            }
+            let contentOffSet = CGPoint(x: UIScreen.main.bounds.width * CGFloat(storyIndex), y: 0)
+            scrollView.setContentOffset(contentOffSet, animated: false)
+        }
     }
     
     func changeStoryIndex(to index:Int) {
@@ -123,29 +136,33 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
     func storyIndexDidChanged() {
         if storyIndex < storyGroup?.storyCount ?? 0 {
             if let story = storyGroup?.stories[storyIndex] {
-                if story.kind == .image {
-                    if let currentPhotoView = self.currentPhotoView {
-                        currentPhotoView.image(withUrl: story.url) { [weak self] (isSuccess) in
-                            guard let strongSelf = self else { return }
-                            if isSuccess {
-                                strongSelf.startProgressBar(for: .image)
-                            }else {
-                                //TODO:Handle nil image
+                DispatchQueue.main.async {
+                    self.storyHeaderView.timeLabel.text = story.timePassed
+                    if story.kind == .image {
+                        if let currentPhotoView = self.currentPhotoView {
+                            currentPhotoView.image(withUrl: story.url) { [weak self] (isSuccess) in
+                                guard let strongSelf = self else { return }
+                                if isSuccess {
+                                    strongSelf.startProgressBar(for: .image)
+                                }else {
+                                    //TODO:Handle nil image
+                                }
+                            }
+                        }else {
+                            self.addMissingImageViews()
+                            let newPhotoView = self.addNewPhotoView()
+                            newPhotoView.image(withUrl: story.url) { [weak self] (isSuccess) in
+                                guard let strongSelf = self else { return }
+                                if isSuccess {
+                                    strongSelf.startProgressBar(for: .image)
+                                }else {
+                                    
+                                }
                             }
                         }
-                    }else {
-                        let newPhotoView = addNewPhotoView()
-                        newPhotoView.image(withUrl: story.url) { [weak self] (isSuccess) in
-                            guard let strongSelf = self else { return }
-                            if isSuccess {
-                                strongSelf.startProgressBar(for: .image)
-                            }else {
-                                
-                            }
-                        }
+                    } else if story.kind == .video {
+                        //TODO: In case of video support
                     }
-                } else if story.kind == .video {
-                    //TODO: In case of video support
                 }
             }
         }
@@ -227,16 +244,22 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
     
     /// PreparesCell on cell willDisplay
     func prepareCell(lastIndex:Int) {
+        clearOldImageViews()
+        scrollView.setContentOffset(.zero, animated: false)
         storyHeaderView.clearProgressBars()
         storyHeaderView.configureProgressBar()
         fillProgressBar(until: lastIndex)
         storyIndex = lastIndex
     }
     
+    func clearOldImageViews() {
+        scrollView.subviews.forEach{$0.removeFromSuperview()}
+    }
+    
     //MARK: - GESTURE RECOGNIZER ACTIONS
     
     @objc func didTapScreen(_ sender: UITapGestureRecognizer) {
-        guard let storyCount = storyGroup?.storyCount else {
+        guard (storyGroup?.storyCount) != nil else {
             return
         }
         let touchLocation = sender.location(ofTouch: 0, in: scrollView)
