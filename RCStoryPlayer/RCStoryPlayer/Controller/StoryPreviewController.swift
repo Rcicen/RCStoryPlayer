@@ -39,6 +39,10 @@ class StoryPreviewController: UIViewController,ReusableView {
            return gesture
     }()
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(StoryPreviewCell.nib, forCellWithReuseIdentifier: StoryPreviewCell.reuseIdentifier)
@@ -132,7 +136,7 @@ extension StoryPreviewController: UICollectionViewDelegate, UICollectionViewData
 
 extension StoryPreviewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return view.bounds.size
+        return collectionView.bounds.size
     }
 }
 

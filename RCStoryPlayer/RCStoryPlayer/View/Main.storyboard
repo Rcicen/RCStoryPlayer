@@ -98,7 +98,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="17c-pk-kKm">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cre-5D-ALg">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -112,12 +112,12 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstItem="17c-pk-kKm" firstAttribute="top" secondItem="ZPe-bX-uzI" secondAttribute="top" id="Vsx-kj-mYe"/>
                             <constraint firstItem="ZPe-bX-uzI" firstAttribute="trailing" secondItem="17c-pk-kKm" secondAttribute="trailing" id="eBJ-Mb-KvO"/>
                             <constraint firstItem="17c-pk-kKm" firstAttribute="leading" secondItem="ZPe-bX-uzI" secondAttribute="leading" id="eLV-Q2-CuD"/>
-                            <constraint firstItem="ZPe-bX-uzI" firstAttribute="bottom" secondItem="17c-pk-kKm" secondAttribute="bottom" id="jz9-Wh-0T9"/>
+                            <constraint firstAttribute="bottom" secondItem="17c-pk-kKm" secondAttribute="bottom" id="jz9-Wh-0T9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZPe-bX-uzI"/>
                     </view>

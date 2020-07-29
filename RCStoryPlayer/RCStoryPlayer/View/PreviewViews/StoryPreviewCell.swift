@@ -82,9 +82,9 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
     func installStoryHeaderViewConstraints() {
         addSubview(storyHeaderView)
         NSLayoutConstraint.activate([
-            storyHeaderView.topAnchor.constraint(equalTo: self.topAnchor,constant: 10),
-            storyHeaderView.leftAnchor.constraint(equalTo: self.leftAnchor),
-            storyHeaderView.rightAnchor.constraint(equalTo: self.rightAnchor),
+            storyHeaderView.topAnchor.constraint(equalTo:safeAreaLayoutGuide.topAnchor,constant:10),
+            storyHeaderView.leftAnchor.constraint(equalTo:leftAnchor),
+            storyHeaderView.rightAnchor.constraint(equalTo:rightAnchor),
             storyHeaderView.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
