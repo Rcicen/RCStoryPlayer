@@ -60,7 +60,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // TODO: Present Preview Controller
         let previewController = self.storyboard?.instantiateViewController(withIdentifier: StoryPreviewController.reuseIdentifier) as! StoryPreviewController
-        previewController.modalPresentationStyle = .fullScreen
+        previewController.modalPresentationStyle = .currentContext
         previewController.storyGroups = stories
         previewController.userSelectedStoryIndex = indexPath.row
         self.present(previewController, animated: true, completion: nil)

@@ -3,33 +3,38 @@
   "story_groups": [
     {
       "user": {
-        "name": "Michel",
-        "picture": "https://randomuser.me/api/portraits/men/1.jpg"
+        "name": "Drake",
+        "picture": "https://randomuser.me/api/portraits/men/59.jpg"
       },
       "stories": [
         {
           "media_kind": "image",
-          "url": "https://i.picsum.photos/id/872/375/667.jpg?hmac=-FYwLpE6ftATKuC3ktFkBcHRD65LrdXlpJ1nB50oIGU",
+          "url": "https://i.picsum.photos/id/358/414/896.jpg?hmac=PiLBZu6twq9Ig8A9tTcPiwfVKB0gejQ6CMNTfPkcFLE",
           "story_publish_date": "1d"
         },
         {
           "media_kind": "image",
-          "url": "https://i.picsum.photos/id/969/375/667.jpg?hmac=DKVAMfa0zp64c7e0VVhv8CkqPs21st05ZZb2jSrOQSI",
+          "url": "https://i.picsum.photos/id/793/375/667.jpg?hmac=uwQdccw7u4UxGPo7GYP3-fM7huZ3P7lOix6S4xiHkz0",
+          "story_publish_date": "1d"
+        },
+        {
+          "media_kind": "image",
+          "url": "https://i.picsum.photos/id/547/375/667.jpg?hmac=RyRvNsCnk0u-wbH33ztmbiVqhgL54u9ScEA7kXvdBT0",
           "story_publish_date": "8h"
         },
         {
           "media_kind": "image",
-          "url": "https://i.picsum.photos/id/6/375/667.jpg?hmac=zvU3qbR1ZPTeV4JLbQmz4rXDuBAukFVmL9oFDt4oQ7U",
+          "url": "https://i.picsum.photos/id/868/375/667.jpg?hmac=-UJZFgNoE6ufiFa9a4Aaq0xR1l4LOpOjnZ5FJmiErZQ",
           "story_publish_date": "3h"
         },
         {
           "media_kind": "image",
-          "url": "https://i.picsum.photos/id/5/375/667.jpg?hmac=1zWiKyPWOpY7VmfAdwQ2g8NRIwaSN_sqgqauC8lgLkA",
+          "url": "https://i.picsum.photos/id/153/375/667.jpg?hmac=4upt4u09xoE0F117Xv-LVcBTCWUYk7Mma866fmBsmBA",
           "story_publish_date": "2m"
         }
       ],
       "id": 123456,
-      "story_count": 4
+      "story_count": 5
     },
     {
       "user": {
@@ -123,18 +128,18 @@
     },
     {
       "user": {
-        "name": "Mike",
-        "picture": "https://randomuser.me/api/portraits/men/52.jpg"
+        "name": "Mia",
+        "picture": "https://randomuser.me/api/portraits/women/60.jpg"
       },
       "stories": [
         {
           "media_kind": "image",
-          "url": "https://i.picsum.photos/id/827/375/667.jpg?hmac=B5O0FMmi_v7SGmkVrpZbgsLN1fx2zcH_2XDw6LST4Ho",
+          "url": "https://i.picsum.photos/id/255/375/667.jpg?hmac=QdewNG3DuiIED1t2oFE59QVfBdxi9NRAdKKlUBoMSTk",
           "story_publish_date": "12h"
         },
         {
           "media_kind": "image",
-          "url": "https://i.picsum.photos/id/158/375/667.jpg?hmac=z-imFPqZip3o8XPD_nAzDAs_tsVMsA3db4TxYlaZUwQ",
+          "url": "https://i.picsum.photos/id/570/375/667.jpg?hmac=m_9Z6KIe24gfdF0iTcgB24CCMbU36Vb5Rrhc6EKhuxg",
           "story_publish_date": "10h"
         }
       ],
@@ -143,13 +148,13 @@
     },
     {
       "user": {
-        "name": "Linda",
-        "picture": "https://randomuser.me/api/portraits/women/65.jpg"
+        "name": "Tate",
+        "picture": "https://randomuser.me/api/portraits/women/66.jpg"
       },
       "stories": [
         {
           "media_kind": "image",
-          "url": "https://i.picsum.photos/id/1005/375/667.jpg?hmac=RFdy70yCGRcAZJ86XXvvyHSxKEPEB5z5oSneXc5eajU",
+          "url": "https://i.picsum.photos/id/916/375/667.jpg?hmac=-CPfHCwsE3OA-ccRLKgjaMfRajQYcqbxfDGnZidOlOs",
           "story_publish_date": "4m"
         }
       ],
@@ -158,23 +163,23 @@
     },
     {
       "user": {
-        "name": "Kate",
-        "picture": "https://randomuser.me/api/portraits/women/24.jpg"
+        "name": "Cindy",
+        "picture": "https://randomuser.me/api/portraits/women/88.jpg"
       },
       "stories": [
         {
           "media_kind": "image",
-          "url": "https://i.picsum.photos/id/642/375/667.jpg?hmac=ASndnPompDneNaQOkENuylgkQxGaSFlBolGQ-dt0swQ",
+          "url": "https://i.picsum.photos/id/834/375/667.jpg?hmac=2FjIaPhN6zgu0Y3AbEY_lnUF4p4bBTdCf70tnFgXiko",
           "story_publish_date": "4h"
         },
         {
           "media_kind": "image",
-          "url": "https://i.picsum.photos/id/316/375/667.jpg?hmac=JzeGgjepk2itiw1uoj9YpWQevnBJMBsixkBlMOZnwq8",
+          "url": "https://i.picsum.photos/id/1082/375/667.jpg?hmac=LjiVMxu60Gdda4SHa6zlnhJM2s77Q7_rAzJpu0htXCo",
           "story_publish_date": "3h"
         },
         {
           "media_kind": "image",
-          "url": "https://i.picsum.photos/id/419/375/667.jpg?hmac=DgDtxcHG2SxmqZpQQa9kxVkvEC4NvqxfsCqfKRqqJJ4",
+          "url": "https://i.picsum.photos/id/491/375/667.jpg?hmac=6EiWui6HHsGm2e-3z4J_tuDQH4CnpHdkM8Xg_Ro2-qk",
           "story_publish_date": "3h"
         }
       ],
