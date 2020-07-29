@@ -134,10 +134,10 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
     }
     
     func storyIndexDidChanged() {
-        storyHeaderView.timeLabel.text = storyGroup?.stories[storyIndex].timePassed
         if storyIndex < storyGroup?.storyCount ?? 0 {
             if let story = storyGroup?.stories[storyIndex] {
                 DispatchQueue.main.async {
+                    self.storyHeaderView.timeLabel.text = story.timePassed
                     if story.kind == .image {
                         if let currentPhotoView = self.currentPhotoView {
                             currentPhotoView.image(withUrl: story.url) { [weak self] (isSuccess) in
