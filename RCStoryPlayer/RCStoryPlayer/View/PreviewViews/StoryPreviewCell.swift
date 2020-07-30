@@ -94,6 +94,7 @@ class StoryPreviewCell: UICollectionViewCell,ReusableView {
         let imageViewIndex = index != nil ? index : storyIndex
         let photoImageView = UIImageView()
         photoImageView.translatesAutoresizingMaskIntoConstraints = false
+        photoImageView.contentMode = .scaleAspectFit
         photoImageView.tag = imageViewIndex! + storyContentViewTagIdentifier
         scrollView.addSubview(photoImageView)
         
